@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Form(props) {
+export default function AddPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
     const history = useHistory();
     const successRoute = () => {
@@ -18,11 +18,39 @@ export default function Form(props) {
         evt.preventDefault();
         submit();
     }
-    return(
+    return (
         <form className="add-plant contatiner" id="add-plant-form" onChange={onChange} onSubmit={onSubmit}>
-        <div className="form-group submit">
-            <h2>Add Plant</h2>
-        </div>
+            <div className="form-group submit">
+                <h2>Add Plant</h2>
+            </div>
+            <div>
+                    <label>Plant Name
+                        <input
+                            name='plantname'
+                            type='text'
+                            value={values.name}
+                            onChange={onChange}
+                            placeholder='type your plant name'
+                            maxLength='30'
+                            id='name-input'
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>Species
+                        <input
+                            name='species'
+                            type='text'
+                            value={values.species}
+                            onChange={onChange}
+                            placeholder='type your unsername'
+                            maxLength='30'
+                            id='name-input'
+                        />
+                    </label>
+                </div>
+
+            <button id="order-button" disabled={disabled}>Add Plant</button>
 
         </form>
     )

@@ -1,7 +1,7 @@
 import './App.css';
 import LoginForm from './components/LoginForm';
 import AddPlant from './Schema/AddPlant/AddPlant';
-
+import "../src/"
 import styled from 'styled-components';
 
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Wrapper>
-        <AddPlant></AddPlant>
+       
         <h1>Water My Plants</h1>
         <nav className="home-login-subscribe">
           <a href="index.html">HOME</a>
@@ -19,6 +19,7 @@ function App() {
           <a href="index.html" id="edit-plant">Edit a Plan</a>
         </nav>
         <LoginForm />
+        <AddPlant/>
       </Wrapper>
 
 

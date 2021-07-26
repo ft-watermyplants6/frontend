@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
 import schema from "../formSchema";
-import addPlantForm from "../AddPlant/addPlantForm"
+import AddPlantForm from "./AddPlantForm"
+
 
 
 const initialFormValues = {
@@ -29,9 +30,9 @@ export default function AddPlant() {
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
 
-    const plantSubmitted = (newplant) => {
-        return setPlants(formValues)
-    }
+    // const plantSubmitted = (newplant) => {
+    //     return setPlants(formValues)
+    // }
 
     //   AXIOS PLACE HOLDERS ====================
     //     .get("https://reqres.in/api/orders")
@@ -81,7 +82,7 @@ export default function AddPlant() {
 
     useEffect(() => {
         schema.isValid(formValues).then((valid) => {
-             setDisabled(!valid); 
+            setDisabled(!valid);
         });
     }, [formValues]);
 
@@ -106,9 +107,9 @@ export default function AddPlant() {
 
 
     return (
-       
+
         <div>
-            <addPlantForm
+            <AddPlantForm
                 values={formValues}
                 change={inputChange}
                 submit={formSubmit}
@@ -116,7 +117,6 @@ export default function AddPlant() {
                 errors={formErrors}
             />
         </div>
-        
     )
 
 }
