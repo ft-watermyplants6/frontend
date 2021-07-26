@@ -19,7 +19,7 @@ const initialFormErrors = {
 };
 
 const plantList = [];
-const initialDisabled = true;
+const initialDisabled = false;
 
 
 export default function AddPlant() {
@@ -80,7 +80,7 @@ export default function AddPlant() {
 
     useEffect(() => {
         schema.isValid(formValues).then((valid) => {
-            //  setDisabled(!valid); //??????????????????????? can't get this working
+             setDisabled(!valid); 
         });
     }, [formValues]);
 
