@@ -21,7 +21,7 @@ const initialFormErrors = {
 };
 
 const plantList = [];
-const initialDisabled = false;
+const initialDisabled = true;
 
 
 export default function AddPlant() {
@@ -78,6 +78,7 @@ export default function AddPlant() {
                     [name]: err.errors[0],
                 });
             });
+            setFormValues({...formValues, [name]: value})
     };
 
     useEffect(() => {
