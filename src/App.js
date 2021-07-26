@@ -1,4 +1,8 @@
 import './App.css';
+import LoginForm from './components/LoginForm';
+import AddPlant from './Schema/AddPlant/AddPlant';
+import { Link } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -10,14 +14,12 @@ function App() {
                     <a href="index.html">HOME</a>
                     <a href="index.html">LogIn/Out</a>
                     <a href="index.html">Subscribe</a>
-                    <Link to={'/add'}>
-                        <button id="add-plant">Add a Plant</button>
-                    </Link>
-                    <Link to={'/edit'}>
-                        <button id="edit-plant">Edit a Plan</button>
-                    </Link>
+                    <a href="indexthtml" id="add-plant">Add a Plant</a>
+                    <a href="index.html" id="edit-plant">Edit a Plan</a>
                 </nav>
 
+      <h1>Water My Plants</h1>
+      <LoginForm/>
     </div>
   );
 }
