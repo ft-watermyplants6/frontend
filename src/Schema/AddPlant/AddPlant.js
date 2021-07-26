@@ -96,7 +96,7 @@ export default function AddPlant() {
     //SUBMIT HANDLER
     const formSubmit = () => {
         const newPlant = {
-            plantname: formValues.plantname.trim(),
+            nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
             frequency: formValues.frequency.trim(),
             image: formValues.image.trim(),
