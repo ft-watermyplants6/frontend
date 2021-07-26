@@ -1,17 +1,17 @@
 import './App.css';
 import LoginForm from './components/LoginForm';
 import AddPlant from './Schema/AddPlant/AddPlant';
-import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 
 function App() {
   return (
     <div>
+      <Wrapper>
       <AddPlant>
 
-      </AddPlant>
-      <Wrapper>
+</AddPlant>
       <h1>Water My Plants</h1>
       <nav className="home-login-subscribe">
                     <a href="index.html">HOME</a>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
-
 import schema from "../formSchema";
+
 
 const initialFormValues = {
     plantname: "",
@@ -32,7 +32,7 @@ export default function AddPlant() {
         return setPlants(formValues)
     }
 
-//   AXIOS PLACE HOLDERS ====================
+    //   AXIOS PLACE HOLDERS ====================
     //     .get("https://reqres.in/api/orders")
     //     .then((res) => {
     //       setPizzas(res.data.data);
@@ -58,7 +58,7 @@ export default function AddPlant() {
             })
     };
 
-//VALIDATIONS =======================
+    //VALIDATIONS =======================
     const validate = (name, value) => {
         yup
             .reach(schema, name)
@@ -80,34 +80,36 @@ export default function AddPlant() {
 
     useEffect(() => {
         schema.isValid(formValues).then((valid) => {
-            //  setDisabled(!valid);
+            //  setDisabled(!valid); //??????????????????????? can't get this working
         });
     }, [formValues]);
 
-//CHANGE HANDLER =========================
+    //CHANGE HANDLER =========================
 
-  const inputChange = (name, value) => {
-    validate(name, value);
-    setFormValues({ ...formValues, [name]: value });
-  };
+    const inputChange = (name, value) => {
+        validate(name, value);
+        setFormValues({ ...formValues, [name]: value });
+    };
 
-  //SUBMIT HANDLER
-  const formSubmit = () => {
-    const newPlant = {
-      plantname: formValues.plantname.trim(),
-      species: formValues.species.trim(),
-      frequency: formValues.frequency.trim(),
-      image: formValues.image.trim(),
+    //SUBMIT HANDLER
+    const formSubmit = () => {
+        const newPlant = {
+            plantname: formValues.plantname.trim(),
+            species: formValues.species.trim(),
+            frequency: formValues.frequency.trim(),
+            image: formValues.image.trim(),
 
+        }
+        postNewPlant(newPlant);
     }
-    postNewPlant(newPlant);
-  }
 
 
     return (
+       
         <div>
 
         </div>
+        
     )
 
 }
