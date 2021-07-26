@@ -49,6 +49,20 @@ export default function AddPlantForm(props) {
                         />
                     </label>
                 </div>
+                <div>
+                <label>h2o Frequency
+          <select
+            onChange={onChange}
+            value={values.h2ofrequency}
+            name='h2ofrequency'
+          >
+            <option value=''>- Select an option -</option>
+            <option value='student'>Daily</option>
+            <option value='alumni'>Weekly</option>
+            <option value='instructor'>Monthly</option>
+          </select>
+        </label>
+                </div>
 
             <button id="order-button" disabled={disabled}>Add Plant</button>
 
