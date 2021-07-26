@@ -4,13 +4,7 @@ import { useHistory } from "react-router-dom";
 export default function AddPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
 
-    <div className='errors'>
-    {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
-    <div>{errors.nickname}</div>
-    <div>{errors.species}</div>
-    <div>{errors.h2ofrequency}</div>
-    <div>{errors.image}</div>
-  </div>
+
     const history = useHistory();
     // const successRoute = () => {
     //     history.push("/plant/success"); //VERIFY ROUTE PLACEHOLDER
@@ -34,7 +28,7 @@ export default function AddPlantForm(props) {
             <div>
                 <label>Plant Name
                     <input
-                        name='plantname'
+                        name='nickname'
                         type='text'
                         value={values.name}
                         onChange={onChange}
@@ -51,7 +45,7 @@ export default function AddPlantForm(props) {
                         value={values.species}
                         type='text'
                         onChange={onChange}
-                        placeholder='type your unsername'
+                        placeholder='type your plant species'
                         maxLength='30'
                         id='name-input'
                     />
@@ -85,6 +79,13 @@ export default function AddPlantForm(props) {
             </div>
 
             <button id="order-button" disabled={disabled}>Add Plant</button>
+            <div className='errors'>
+                <div>{errors.nickname}</div>
+                <div>{errors.species}</div>
+                <div>{errors.h2ofrequency}</div>
+                <div>{errors.image}</div>
+            </div>
+
 
         </form>
     )
