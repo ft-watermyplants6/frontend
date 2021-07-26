@@ -1,25 +1,9 @@
 import React from 'react'
 
-class LoginForm extends React.Component{
-    state ={
-        credentials: {
-            username: '',
-            phoneNumber: '',
-            password: ''
-        }
-    }
-
-    handleChange = e => {
-        this.setState({
-            credentials: {
-                ...this.state.credentials,
-                [e.target.name] : e.target.value
-            }
-        })
-    }
+class SignupForm extends React.Component {
 
     render() {
-        return (
+        return(
             <div>
               <form>
                   <label>Username: 
@@ -30,6 +14,15 @@ class LoginForm extends React.Component{
                      onChange={this.handleChange}
                     />
                   </label>
+                  <label>Phone Number: 
+                    <input 
+                      type='tel'
+                      name='phoneNumber'
+                      pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                      value={this.state.credentials.phoneNumber}
+                      onChange={this.handleChange}
+                    />
+                  </label>
                   <label>Password: 
                     <input 
                       type='password'
@@ -38,11 +31,12 @@ class LoginForm extends React.Component{
                       onChange={this.handleChange}
                     />
                   </label>
-                    <button>Log in</button>
+                    <button>Sign Up</button>
               </form>
             </div>
+            
         )
     }
 }
 
-export default LoginForm
+export default SignupForm
