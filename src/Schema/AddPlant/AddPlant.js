@@ -2,24 +2,26 @@ import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
 import schema from "../formSchema";
+import AddPlantForm from "./AddPlantForm"
+
 
 
 const initialFormValues = {
-    plantname: "",
+    nickname: "",
     species: "",
-    frequency: "",
+    h2ofrequency: "",
     image: "",
 };
 
 const initialFormErrors = {
-    plantname: "",
+    nickname: "",
     species: "",
-    frequency: "",
+    h2ofrequency: "",
     image: "",
 };
 
 const plantList = [];
-const initialDisabled = false;
+const initialDisabled = true;
 
 
 export default function AddPlant() {
@@ -28,9 +30,9 @@ export default function AddPlant() {
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
 
-    const plantSubmitted = (newplant) => {
-        return setPlants(formValues)
-    }
+    // const plantSubmitted = (newplant) => {
+    //     return setPlants(formValues)
+    // }
 
     //   AXIOS PLACE HOLDERS ====================
     //     .get("https://reqres.in/api/orders")
@@ -76,11 +78,12 @@ export default function AddPlant() {
                     [name]: err.errors[0],
                 });
             });
+            setFormValues({...formValues, [name]: value})
     };
 
     useEffect(() => {
         schema.isValid(formValues).then((valid) => {
-             setDisabled(!valid); 
+            setDisabled(!valid);
         });
     }, [formValues]);
 
@@ -94,7 +97,7 @@ export default function AddPlant() {
     //SUBMIT HANDLER
     const formSubmit = () => {
         const newPlant = {
-            plantname: formValues.plantname.trim(),
+            nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
             frequency: formValues.frequency.trim(),
             image: formValues.image.trim(),
@@ -105,11 +108,16 @@ export default function AddPlant() {
 
 
     return (
-       
-        <div>
 
+        <div>
+            <AddPlantForm
+                values={formValues}
+                change={inputChange}
+                submit={formSubmit}
+                disabled={disabled}
+                errors={formErrors}
+            />
         </div>
-        
     )
 
 }
