@@ -8,7 +8,7 @@ export default function Form() {
         history.push("/plant/success"); //VERIFY ROUTE PLACEHOLDER
     }
 
-    const OnChange = (evt) => {
+    const onChange = (evt) => {
         const { name, value, type, checked } = evt.target
         const valueToUse = type === 'checkbox' ? checked : value
         change(name, valueToUse)
