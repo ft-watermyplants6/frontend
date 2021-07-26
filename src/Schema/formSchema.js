@@ -12,9 +12,9 @@ export default yup.object().shape({
         .min(2, "name must be at least 2 characters"),
     h2ofrequency: yup
         .string()
-        .required("Water Frequency is required")
-        .min(2, "name must be at least 2 characters"),
+        .oneOf(['daily', 'weekly', 'monthly'], 'h2o Frequency is required'),
     image: yup
-    .string()
+        .string()
+        .required("Imgage must be in URL format"),
 
 })

@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Wrapper>
-       
+
         <h1>Water My Plants</h1>
         <nav className="home-login-subscribe">
           <a href="index.html">HOME</a>
@@ -19,7 +19,7 @@ function App() {
           <a href="index.html" id="edit-plant">Edit a Plan</a>
         </nav>
         <LoginForm />
-        <AddPlant/>
+        <AddPlant />
       </Wrapper>
 
 

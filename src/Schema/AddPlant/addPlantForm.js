@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 export default function AddPlantForm(props) {
-    const { values, submit, change, disabled, errors } = props;
+    const { values, submit, change, disabled } = props;
     const history = useHistory();
     // const successRoute = () => {
     //     history.push("/plant/success"); //VERIFY ROUTE PLACEHOLDER
