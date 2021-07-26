@@ -7,16 +7,16 @@ import AddPlantForm from "./AddPlantForm"
 
 
 const initialFormValues = {
-    plantname: "",
+    nickname: "",
     species: "",
-    frequency: "",
+    h2ofrequency: "",
     image: "",
 };
 
 const initialFormErrors = {
-    plantname: "",
+    nickname: "",
     species: "",
-    frequency: "",
+    h2ofrequency: "",
     image: "",
 };
 
