@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Form() {
+export default function Form(props) {
     const { values, submit, change, disabled, errors } = props;
     const history = useHistory();
     const successRoute = () => {
@@ -19,6 +19,11 @@ export default function Form() {
         submit();
     }
     return(
-        <form className="add-plant contatiner" id="add-plant-form" onChange={onChange} onSubmit={onSubmit}/>
+        <form className="add-plant contatiner" id="add-plant-form" onChange={onChange} onSubmit={onSubmit}>
+        <div className="form-group submit">
+            <h2>Add Plant</h2>
+        </div>
+
+        </form>
     )
 }
