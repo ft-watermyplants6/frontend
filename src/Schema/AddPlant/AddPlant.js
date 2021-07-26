@@ -5,6 +5,20 @@ import React, { useState, useEffect } from "react";
 
 
 export default function AddPlant(){
+    const initialFormValues = {
+        plantname: "",
+        species: "",
+        frequency: "",
+        image: "",
+    };
+
+    const initialFormErrors = {
+        plantname: "",
+        species: "",
+        frequency: "",
+        image: "",
+    }
+    
     return(
         <div>
 
