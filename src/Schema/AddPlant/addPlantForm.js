@@ -2,7 +2,15 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 export default function AddPlantForm(props) {
-    const { values, submit, change, disabled } = props;
+    const { values, submit, change, disabled, errors } = props;
+
+    <div className='errors'>
+    {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
+    <div>{errors.nickname}</div>
+    <div>{errors.species}</div>
+    <div>{errors.h2ofrequency}</div>
+    <div>{errors.image}</div>
+  </div>
     const history = useHistory();
     // const successRoute = () => {
     //     history.push("/plant/success"); //VERIFY ROUTE PLACEHOLDER
