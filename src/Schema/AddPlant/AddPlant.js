@@ -95,6 +95,9 @@ export default function AddPlant() {
   const formSubmit = () => {
     const newPlant = {
       plantname: formValues.plantname.trim(),
+      species: formValues.species.trim(),
+      frequency: formValues.frequency.trim(),
+      image: formValues.image.trim(),
 
     }
     postNewPlant(newPlant);
