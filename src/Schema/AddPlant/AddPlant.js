@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-// import * as yup from "yup";
-// import schema from "./validations/formSchema";
+import * as yup from "yup";
 import axios from "axios";
+
+import schema from "../formSchema";
 
 const initialFormValues = {
     plantname: "",
@@ -31,7 +32,7 @@ export default function AddPlant(){
         return setPlants(formValues)
     } 
 
-     //   axios
+//   AXIOS PLACE HOLDERS
   //     .get("https://reqres.in/api/orders")
   //     .then((res) => {
   //       setPizzas(res.data.data);
@@ -56,6 +57,32 @@ export default function AddPlant(){
         console.log(err);
       })
   };
+
+//VALIDATIONS
+const validate = (name, value) => {
+    yup
+      .reach(schema, name)
+      .validate(value)
+      .then((valid) => {
+        //eslint-disable-line
+        setFormErrors({
+          ...formErrors,
+          [name]: "",
+        });
+      })
+      .catch((err) => {
+        setFormErrors({
+          ...formErrors,
+          [name]: err.errors[0],
+        });
+      });
+  };
+
+  useEffect(() => {
+    schema.isValid(formValues).then((valid) => {
+      //  setDisabled(!valid);
+    });
+  }, [formValues]);
 
     
     return(
