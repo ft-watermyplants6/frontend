@@ -113,13 +113,13 @@ export default function AddPlant() {
         const newPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            frequency: formValues.frequency.trim(),
+            h2ofrequency: formValues.h2ofrequency.trim(),
             image: formValues.image.trim()
         }
         const editPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            frequency: formValues.frequency.trim(),
+            h2ofrequency: formValues.h2ofrequency.trim(),
             image: formValues.image.trim(),
         }
 

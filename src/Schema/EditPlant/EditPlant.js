@@ -27,7 +27,7 @@ import * as yup from "yup";
 import axios from "axios";
 import schema from "../formSchema";
 import EditPlantForm from "./EditPlantForm";
-
+import styled from 'styled-components';
 
 
 const initialFormValues = {
@@ -84,7 +84,7 @@ export default function EditPlant() {
             })
     };
 
-    const putNewPlant = (editPlant) => { 
+    const putNewPlant = (editPlant) => {
         axios
             .put("???????", editPlant)
             .then((res) => {
@@ -116,7 +116,7 @@ export default function EditPlant() {
                     [name]: err.errors[0],
                 });
             });
-            setFormValues({...formValues, [name]: value})
+        setFormValues({ ...formValues, [name]: value })
     };
 
     useEffect(() => {
@@ -137,33 +137,45 @@ export default function EditPlant() {
         const newPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            frequency: formValues.frequency.trim(),
+            h2ofrequency: formValues.h2ofrequency.trim(),
             image: formValues.image.trim()
         }
         const editPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            frequency: formValues.frequency.trim(),
+            h2ofrequency: formValues.h2ofrequency.trim(),
             image: formValues.image.trim(),
         }
 
-        
+
         postNewPlant(newPlant);
         putNewPlant(editPlant);
     }
 
 
     return (
+        <Container>
+            <div>
+                <EditPlantForm
+                    values={formValues}
+                    change={inputChange}
+                    submit={formSubmit}
+                    disabled={disabled}
+                    errors={formErrors}
+                />
+            </div>
 
-        <div>
-            <EditPlantForm
-                values={formValues}
-                change={inputChange}
-                submit={formSubmit}
-                disabled={disabled}
-                errors={formErrors}
-            />
-        </div>
+            <div>
+                <Image src="https://images.unsplash.com/photo-1498569026542-39c64353e401?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fG1pc3NpbmclMjBwbGFudCUyMHNwb3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+            </div>
+        </Container>
     )
 
 }
+
+const Image = styled.img`
+border: 1px solid black;
+margin: 3% ;
+height: 60vh; `
+
+const Container = styled.div``;
