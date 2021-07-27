@@ -1,6 +1,7 @@
 import './App.css';
 import LoginForm from './components/LoginForm';
 import AddPlant from './Schema/AddPlant/AddPlant';
+import EditPlant from './Schema/EditPlant/EditPlant';
 import "../src/"
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -16,13 +17,14 @@ function App() {
         <nav className="home-login-subscribe">
           <Link to='/'>HOME</Link>
           <Link to='/login'>LogIn/Out</Link>
-          <a href="index.html">Subscribe</a>
+          <a href="index.html">View Plants</a>
           <Link to='/addPlant' id="add-plant">Add a Plant</Link>
-          <a href="index.html" id="edit-plant">Edit a Plan</a>
+          <Link to='/editPlant' id="edit-plant">Edit a Plant</Link>
         </nav>
         <Switch>
           <Route path='/login' component={LoginForm}/>
           <Route path='/addPlant' component={AddPlant}/>
+          <Route path='/editPlant' component={EditPlant}/>
         </Switch>
         {/* <AddPlant /> */}
       </Wrapper>
