@@ -2,6 +2,7 @@ import './App.css';
 import LoginForm from './components/LoginForm';
 import AddPlant from './Schema/AddPlant/AddPlant';
 import EditPlant from './Schema/EditPlant/EditPlant';
+import PlantList from './components/PlantList';
 import Home from './components/Home';
 import "../src/"
 import styled from 'styled-components';
@@ -18,7 +19,7 @@ function App() {
         <nav className="home-login-subscribe">
           <Link to='/'>HOME</Link>
           <Link to='/login'>LogIn/Out</Link>
-          <a href="index.html">View Plants</a>
+          <Link to='/plantList'>View Plants</Link>
           <Link to='/addPlant' id="add-plant">Add a Plant</Link>
           <Link to='/editPlant' id="edit-plant">Edit a Plant</Link>
         </nav>
@@ -27,6 +28,7 @@ function App() {
           <Route path='/login' component={LoginForm}/>
           <Route path='/addPlant' component={AddPlant}/>
           <Route path='/editPlant' component={EditPlant}/>
+          <Route path='/plantList' component={PlantList}/>
         </Switch>
         {/* <AddPlant /> */}
       </Wrapper>
