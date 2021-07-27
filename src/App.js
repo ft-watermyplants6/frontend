@@ -3,27 +3,32 @@ import LoginForm from './components/LoginForm';
 import AddPlant from './Schema/AddPlant/AddPlant';
 import "../src/"
 import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 
 function App() {
   return (
-    <div>
+    <Router>
+      <div className='App'>
       <Wrapper>
 
         <h1>Water My Plants</h1>
         <nav className="home-login-subscribe">
-          <a href="index.html">HOME</a>
-          <a href="index.html">LogIn/Out</a>
+          <Link to='/'>HOME</Link>
+          <Link to='/login'>LogIn/Out</Link>
           <a href="index.html">Subscribe</a>
-          <a href="indexthtml" id="add-plant">Add a Plant</a>
+          <Link to='/addPlant' id="add-plant">Add a Plant</Link>
           <a href="index.html" id="edit-plant">Edit a Plan</a>
         </nav>
-        <LoginForm />
-        <AddPlant />
+        <Switch>
+          <Route path='/login' component={LoginForm}/>
+          <Route path='/addPlant' component={AddPlant}/>
+        </Switch>
+        {/* <AddPlant /> */}
       </Wrapper>
 
-
-    </div>
+      </div>
+    </Router>
   );
 }
 
