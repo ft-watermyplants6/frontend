@@ -60,6 +60,20 @@ export default function AddPlant() {
             })
     };
 
+    const putNewPlant = (editPlant) => {
+        axios
+            .put("???????", editPlant)
+            .then((res) => {
+                setPlants([...plants, res.data]);
+                setFormValues(initialFormValues);
+                console.log(`HERE is postNewPlant`, postNewPlant);
+            })
+            .catch((err) => {
+                debugger;
+                console.log(err);
+            })
+    };
+
     //VALIDATIONS =======================
     const validate = (name, value) => {
         yup

@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export default function AddPlantForm(props) {
+export default function EditPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
 
 
@@ -16,12 +16,12 @@ export default function AddPlantForm(props) {
         change(name, valueToUse)
     }
     const onSubmit = (evt) => {
-        history.push('plant/success');
+        history.push('plant/edit/success');
         evt.preventDefault();
         submit();
     }
     return (
-        <form className="add-plant contatiner" id="add-plant-form" onChange={onChange} onSubmit={onSubmit}>
+        <form className="edit-plant contatiner" id="edit-plant-form" onChange={onChange} onSubmit={onSubmit}>
             <div className="form-group submit">
                 <h2>Add Plant</h2>
             </div>
@@ -78,7 +78,7 @@ export default function AddPlantForm(props) {
 
             </div>
 
-            <button id="order-button" disabled={disabled}>Add Plant</button>
+            <button id="order-button" disabled={disabled}>Edit a Plant</button>
             <div className='errors'>
                 <div>{errors.nickname}</div>
                 <div>{errors.species}</div>
