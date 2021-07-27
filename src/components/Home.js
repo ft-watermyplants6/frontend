@@ -1,22 +1,23 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 export default function Home() {
-
-    
     return (
         <Container>
             <div>
-                <Image src="https://thumbs.dreamstime.com/b/random-plant-coast-random-plant-coast-187708193.jpg" alt="plant"/>
+                <Image
+                    src="https://thumbs.dreamstime.com/b/random-plant-coast-random-plant-coast-187708193.jpg"
+                    alt="plant"
+                />
             </div>
-
         </Container>
-    )
+    );
 }
 
 const Image = styled.img`
-border: 1px solid black;
-margin: 3% ;
-height: 60vh; `
+  border: 1px solid black;
+  margin: 3%;
+  height: 60vh;
+`;
 
 const Container = styled.div`
 h1{
