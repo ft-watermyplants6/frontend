@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import styled from 'styled-components';
 
 export default function AddPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
@@ -85,8 +86,15 @@ export default function AddPlantForm(props) {
                 <div>{errors.h2ofrequency}</div>
                 <div>{errors.image}</div>
             </div>
-
+            <div>
+                <Image src="https://images.unsplash.com/photo-1494537176433-7a3c4ef2046f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGFkZCUyMHBsYW50fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="plant"/>
+            </div>
 
         </form>
     )
 }
+
+const Image = styled.img`
+border: 1px solid black;
+margin: 3% ;
+height: 60vh; `
