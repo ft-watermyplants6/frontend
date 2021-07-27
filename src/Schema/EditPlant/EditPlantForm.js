@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 export default function EditPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
@@ -90,3 +91,24 @@ export default function EditPlantForm(props) {
         </form>
     )
 }
+
+const Image = styled.img`
+  border: 1px solid black;
+  margin: 3%;
+  height: 60vh;
+`;
+
+const Container = styled.div`
+  form {
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+  label {
+    margin: 0.25%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }`;
