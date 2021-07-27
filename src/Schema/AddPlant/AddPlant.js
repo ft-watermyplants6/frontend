@@ -130,7 +130,6 @@ export default function AddPlant() {
 
 
     return (
-
         <div>
             <AddPlantForm
                 values={formValues}
@@ -143,3 +142,4 @@ export default function AddPlant() {
     )
 
 }
+

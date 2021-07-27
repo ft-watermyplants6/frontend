@@ -10,6 +10,7 @@ export default class PlantList extends Component {
     componentDidMount() {
         getPlants()
              .then(res => {
+                 console.log(res)
                  this.setState({
                      plants: res.data.results
                  })
