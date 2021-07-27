@@ -12,6 +12,11 @@ import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
 
 
 function App() {
+
+  // const logout = () => {
+  //   window.localStorage.removeItem('token');
+  // };
+
   return (
     <Router>
       <div className='App'>
