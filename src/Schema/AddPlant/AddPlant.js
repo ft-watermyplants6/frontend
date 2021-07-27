@@ -60,13 +60,13 @@ export default function AddPlant() {
             })
     };
 
-    const putNewPlant = (editPlant) => {
+    const putNewPlant = (editPlant) => { 
         axios
             .put("???????", editPlant)
             .then((res) => {
                 setPlants([...plants, res.data]);
                 setFormValues(initialFormValues);
-                console.log(`HERE is postNewPlant`, postNewPlant);
+                console.log(`HERE is putNewPlant`, putNewPlant);
             })
             .catch((err) => {
                 debugger;
@@ -114,10 +114,18 @@ export default function AddPlant() {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
             frequency: formValues.frequency.trim(),
-            image: formValues.image.trim(),
-
+            image: formValues.image.trim()
         }
+        const editPlant = {
+            nickname: formValues.nickname.trim(),
+            species: formValues.species.trim(),
+            frequency: formValues.frequency.trim(),
+            image: formValues.image.trim(),
+        }
+
+        
         postNewPlant(newPlant);
+        putNewPlant(editPlant);
     }
 
 
