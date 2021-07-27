@@ -2,6 +2,35 @@ import React from 'react'
 
 class SignupForm extends React.Component {
 
+  // state = {
+  //   credentials: {
+  //     username: '',
+  //     password: '',
+  //     phoneNumber: '',
+  //   }
+  // };
+
+  // handleChange = e => {
+  //   this.setState({
+  //     credentials: {
+  //       ...this.state.credentials,
+  //       [e.target.name]: e.target.value
+  //     }
+  //   });
+  // };
+
+  // login = e => {
+  //   e.preventDefault();
+  //   axios.post('', this.state.credentials)
+  //     .then(res => {
+  //       localStorage.setItem('token', res.data.token);
+  //       localStorage.setItem('username', res.data.username);
+  //       this.props.history.push("/protected");
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+
     render() {
         return(
             <div>

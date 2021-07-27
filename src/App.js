@@ -9,6 +9,11 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 
 function App() {
+
+  // const logout = () => {
+  //   window.localStorage.removeItem('token');
+  // };
+
   return (
     <Router>
       <div className='App'>
