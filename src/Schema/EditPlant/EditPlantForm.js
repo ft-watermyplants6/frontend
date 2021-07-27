@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 export default function EditPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
@@ -11,21 +12,22 @@ export default function EditPlantForm(props) {
     // }
 
     const onChange = (evt) => {
-        const { name, value, type, checked } = evt.target
-        const valueToUse = type === 'checkbox' ? checked : value
-        change(name, valueToUse)
+        const { name, value } = evt.target
+        
+        change(name, value)
     }
     const onSubmit = (evt) => {
-        history.push('plant/edit/success');
+        history.push('/EditPlantSuccess');
         evt.preventDefault();
         submit();
     }
     return (
+        <Container>
         <form className="edit-plant contatiner" id="edit-plant-form" onChange={onChange} onSubmit={onSubmit}>
             <div className="form-group submit">
                 <h2>Edit Plant</h2>
             </div>
-            <div>
+            
                 <label>Plant Name
                     <input
                         name='nickname'
@@ -37,8 +39,8 @@ export default function EditPlantForm(props) {
                         id='name-input'
                     />
                 </label>
-            </div>
-            <div>
+            
+            
                 <label>Species
                     <input
                         name='species'
@@ -50,8 +52,8 @@ export default function EditPlantForm(props) {
                         id='name-input'
                     />
                 </label>
-            </div>
-            <div>
+            
+            
                 <label>h2o Frequency
                     <select
                         name='h2ofrequency'
@@ -64,8 +66,8 @@ export default function EditPlantForm(props) {
                         <option value='monthly'>Monthly</option>
                     </select>
                 </label>
-            </div>
-            <div>
+            
+            
                 <label>Add Image
                     <input
                         name='image'
@@ -76,9 +78,10 @@ export default function EditPlantForm(props) {
                     />
                 </label>
 
-            </div>
+           
 
             <button id="order-button" disabled={disabled}>Edit a Plant</button>
+
             <div className='errors'>
                 <div>{errors.nickname}</div>
                 <div>{errors.species}</div>
@@ -88,5 +91,23 @@ export default function EditPlantForm(props) {
 
 
         </form>
+        </Container>
     )
 }
+
+
+
+const Container = styled.div`
+  form {
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+  label {
+    margin: 0.25%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }`;

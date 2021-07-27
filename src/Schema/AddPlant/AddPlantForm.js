@@ -2,24 +2,22 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+
 export default function AddPlantForm(props) {
     const { values, submit, change, disabled, errors } = props;
-
     const history = useHistory();
-    // const successRoute = () => {
-    //     history.push("/plant/success"); //VERIFY ROUTE PLACEHOLDER
-    // }
 
     const onChange = (evt) => {
-        const { name, value, type, checked } = evt.target;
-        const valueToUse = type === "checkbox" ? checked : value;
-        change(name, valueToUse);
-    };
+        const { name, value} = evt.target;
+        change(name, value);
+    }
+
     const onSubmit = (evt) => {
-        history.push("plant/success");
+        history.push("/AddSuccess");
         evt.preventDefault();
         submit();
-    };
+    }
+
     return (
         <Container>
             <div>
@@ -87,6 +85,7 @@ export default function AddPlantForm(props) {
                     <button id="order-button" disabled={disabled}>
                         Add Plant
                     </button>
+
                     <div className="errors">
                         <div>{errors.nickname}</div>
                         <div>{errors.species}</div>
@@ -101,7 +100,10 @@ export default function AddPlantForm(props) {
                     </div>
                 </form>
             </div>
+
         </Container>
+        
+        
     );
 }
 
@@ -124,7 +126,4 @@ const Container = styled.div`
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  button {
-  }
-`;
+  }`;
