@@ -6,6 +6,8 @@ import Home from './components/Home';
 import "../src/"
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import AddSuccess from './Schema/AddPlant/AddSuccess'
+import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
 
 
 function App() {
@@ -24,11 +26,12 @@ function App() {
         </nav>
         <Switch>
           <Route exact path='/' component={Home}/>
+          <Route path='/AddSuccess' component={AddSuccess}/>
+          <Route path='/EditPlantSuccess' component={EditPlantSuccess}/>
           <Route path='/login' component={LoginForm}/>
           <Route path='/addPlant' component={AddPlant}/>
           <Route path='/editPlant' component={EditPlant}/>
         </Switch>
-        {/* <AddPlant /> */}
       </Wrapper>
 
       </div>
