@@ -2,6 +2,7 @@ import './App.css';
 import LoginForm from './components/LoginForm';
 import AddPlant from './Schema/AddPlant/AddPlant';
 import EditPlant from './Schema/EditPlant/EditPlant';
+import Home from './components/Home';
 import "../src/"
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -22,6 +23,7 @@ function App() {
           <Link to='/editPlant' id="edit-plant">Edit a Plant</Link>
         </nav>
         <Switch>
+          <Route exact path='/' component={Home}/>
           <Route path='/login' component={LoginForm}/>
           <Route path='/addPlant' component={AddPlant}/>
           <Route path='/editPlant' component={EditPlant}/>

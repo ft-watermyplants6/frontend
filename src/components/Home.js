@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <Container>
             <div>
-                <Image src="" alt="plant"/>
+                <Image src="https://thumbs.dreamstime.com/b/random-plant-coast-random-plant-coast-187708193.jpg" alt="plant"/>
             </div>
 
         </Container>
