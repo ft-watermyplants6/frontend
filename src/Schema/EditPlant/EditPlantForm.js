@@ -78,7 +78,7 @@ export default function EditPlantForm(props) {
 
             </div>
 
-            <button id="order-button" disabled={disabled}>Edit Plant</button>
+            <button id="order-button" disabled={disabled}>Edit a Plant</button>
             <div className='errors'>
                 <div>{errors.nickname}</div>
                 <div>{errors.species}</div>
