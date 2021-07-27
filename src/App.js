@@ -47,19 +47,26 @@ h1{
     margin-bottom: 2%;
     
 }
+nav{
+  display: flex;
+  justify-content: center;
+}
 
-.links{
+a{
+
 text-decoration: none;
 background-color: rgb(179, 170, 170);
 padding: 1%;
 border-radius: 25%;
 margin: 0 1%;
+
 &:hover{
     background-color: rgb(11, 223, 57);
-    transform:scale(3);
-    transition: all 0.5s ease-in-out;
+    transform:scale(1.25);
+    transition: all 0.5s ease-in-out; 
 }
-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
 }
+
 `;
 

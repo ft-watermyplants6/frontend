@@ -25,6 +25,8 @@ class LoginForm extends React.Component {
         
         <div>
           <form id="form">
+            
+           
             <label>Username:
               <input
                 type='text'
@@ -33,6 +35,9 @@ class LoginForm extends React.Component {
                 onChange={this.handleChange}
               />
             </label>
+           
+            
+           
             <label>Password:
               <input
                 type='password'
@@ -41,7 +46,11 @@ class LoginForm extends React.Component {
                 onChange={this.handleChange}
               />
             </label>
+        
+            
+          
             <button>Log in</button>
+            
           </form>
         </div>
         <div>
@@ -62,12 +71,19 @@ height: 60vh; `
 
 const Container = styled.div`
 form{
-  margin: 2%;
+  margin: 1%;
   display: flex;
   flex-direction: column;
 	justify-content: space-space-between;
-	align-items: center;
+	align-items: center; 
 
+}
+label{
+  margin: 1%;
+
+
+}
+button{
 
 }
 `;
