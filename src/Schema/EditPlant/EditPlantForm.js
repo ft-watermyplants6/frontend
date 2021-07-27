@@ -23,7 +23,7 @@ export default function EditPlantForm(props) {
     return (
         <form className="edit-plant contatiner" id="edit-plant-form" onChange={onChange} onSubmit={onSubmit}>
             <div className="form-group submit">
-                <h2>Add Plant</h2>
+                <h2>Edit Plant</h2>
             </div>
             <div>
                 <label>Plant Name
