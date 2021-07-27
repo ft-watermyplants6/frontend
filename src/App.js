@@ -51,15 +51,12 @@ nav{
   display: flex;
   justify-content: center;
 }
-
 a{
-
 text-decoration: none;
 background-color: rgb(179, 170, 170);
 padding: 1%;
 border-radius: 25%;
 margin: 0 1%;
-
 &:hover{
     background-color: rgb(11, 223, 57);
     transform:scale(1.25);
@@ -67,6 +64,4 @@ margin: 0 1%;
 }
  transition: all 0.5s ease-in-out;
 }
-
 `;
-
