@@ -11,7 +11,7 @@ export default function Plant({ details }) {
             <div className='plant container'>
                 <h2>{details.nickname}</h2>
                 <p>species: {details.size}</p>
-                <p>h2ofrequency: {details.special}</p>
+                <p>h2oInterval: {details.special}</p>
                 <p>imgae: {details.image}</p>
             </div>
         </Plantcard>

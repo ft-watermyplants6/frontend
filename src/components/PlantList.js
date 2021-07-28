@@ -25,12 +25,12 @@ export default class PlantList extends Component {
 
     componentDidMount() {
         axios.get('https://dog.ceo/api/breeds/image/random')
-             .then(res => {
-                 console.log(res.data.message)
-                 this.setState({
-                     dogs: res.data.message
-                 })
-             })
+            .then(res => {
+                console.log(res.data.message)
+                this.setState({
+                    dogs: res.data.message
+                })
+            })
     }
 
     render() {
@@ -45,10 +45,10 @@ export default class PlantList extends Component {
                         </div>
                     ))}
                 </main>
-                <img src={this.state.dogs} alt=''/>
-                <img src={this.state.dogs} alt=''/>
-                <img src={this.state.dogs} alt=''/>
-                <img src={this.state.dogs} alt=''/>
+                <img src={this.state.dogs} alt='' />
+                <img src={this.state.dogs} alt='' />
+                <img src={this.state.dogs} alt='' />
+                <img src={this.state.dogs} alt='' />
             </Plantlist>
         )
     }
