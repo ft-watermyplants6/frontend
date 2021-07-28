@@ -6,26 +6,24 @@ import PlantList from './components/PlantList';
 import Home from './components/Home';
 import "../src/"
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch, useHistory } from 'react-router-dom'
 import AddSuccess from './Schema/AddPlant/AddSuccess'
 import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
 import SignupForm from './components/SignupForm';
-// import axiosWithAuth from './axiosWithAuth'
+import PrivateRoute from './components/PrivateRoute';
+import { useState } from 'react';
 
 
 function App() {
-
+  const [ toggle, setToggle ] = useState(false)
+  const flipToggle = () => {
+    setToggle(!toggle)
+    console.log('im here!')
+    window.location.href = '/plantList'
+  }
   const logout = () => {
-    // axiosWithAuth()
-    //   .post('/logout')
-    //   .then(res => {
-    //     localStorage.removeItem('token')
-    //     localStorage.removeItem('username')
+        window.localStorage.removeItem('token')
         window.location.href = '/login'
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
   };
 
   return (
@@ -37,20 +35,28 @@ function App() {
         <nav className="home-login-subscribe">
           <Link className='links' to='/'>HOME</Link>
           <Link className='links' to='/login'>LogIn</Link>
-          <Link className='links' to='/plantList'>View Plants</Link>
-          <Link className='links' to='/addPlant' id="add-plant">Add a Plant</Link>
-          <Link className='links' to='/editPlant' id="edit-plant">Edit a Plant</Link>
           <Link className='links' to='/logout' onClick={logout}>Logout</Link>
+
+          {localStorage.getItem('token') ?
+          <Link className='links' to='/plantList'>View Plants</Link> : <div></div>}
+
+          {localStorage.getItem('token') ?
+          <Link className='links' to='/addPlant' id="add-plant">Add a Plant</Link> : <div></div>}
+
+          {localStorage.getItem('token') ?
+          <Link className='links' to='/editPlant' id="edit-plant">Edit a Plant</Link> : <div></div>}
+          
         </nav>
         <Switch>
+          <PrivateRoute path='/AddSuccess' component={AddSuccess}/>
+          <PrivateRoute path='/EditPlantSuccess' component={EditPlantSuccess}/>
+          <PrivateRoute path='/addPlant' component={AddPlant}/>
+          <PrivateRoute path='/editPlant' component={EditPlant}/>
+          <PrivateRoute path='/plantList' component={PlantList}/>
           <Route exact path='/' component={Home}/>
-          <Route path='/AddSuccess' component={AddSuccess}/>
-          <Route path='/EditPlantSuccess' component={EditPlantSuccess}/>
-          <Route path='/login' component={LoginForm}/>
-          <Route path='/addPlant' component={AddPlant}/>
-          <Route path='/editPlant' component={EditPlant}/>
-          <Route path='/plantList' component={PlantList}/>
+          <Route path='/login'><LoginForm setToggle={flipToggle}/></Route>
           <Route path='/signUp' component={SignupForm}/>
+          
         </Switch>
       </Wrapper>
 
