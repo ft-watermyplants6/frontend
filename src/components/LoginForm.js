@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import axios  from 'axios';
+import axios from 'axios';
 
 class LoginForm extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
       password: ''
     }
   }
-  constructor(props){
+  constructor(props) {
     super(props)
     this.setToggle = props.setToggle
     console.log('this.setToggle', this.setToggle)
@@ -32,23 +32,23 @@ class LoginForm extends React.Component {
         localStorage.setItem('token', res.data.token);
         this.setToggle()
       })
-      .catch(err=>{
+      .catch(err => {
         console.log(err);
       })
-    }
+  }
 
-    onClick = () => {
-      this.props.history.push('/signUp')
-    }
+  onClick = () => {
+    this.props.history.push('/signUp')
+  }
 
   render() {
     return (
       <Container>
-        
+
         <div>
           <form id="form" onClick={this.login}>
-            
-           
+
+
             <label>Username:
               <input
                 type='text'
@@ -57,9 +57,9 @@ class LoginForm extends React.Component {
                 onChange={this.handleChange}
               />
             </label>
-           
-            
-           
+
+
+
             <label>Password:
               <input
                 type='password'
@@ -68,15 +68,14 @@ class LoginForm extends React.Component {
                 onChange={this.handleChange}
               />
             </label>
-        
-            
-          
+            <div>
             <button>Log in</button>
+            </div>
             <button onClick={this.onClick}>Sign up</button>
-            
+
           </form>
         </div>
-        <div>
+        <div className="images">
           <Image src="https://images.unsplash.com/photo-1524492449090-a4e289316d9c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000" alt="plant" />
         </div>
       </Container>
@@ -89,7 +88,16 @@ export default LoginForm
 const Image = styled.img`
 border: 1px solid black;
 margin: 3% ;
-height: 60vh; `
+height: 60vh;
+@media (max-width: 768px){
+  display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	/* align-items: center; */
+	flex-flow: wrap;
+	background-color: antiquewhite;
+}
+`;
 
 
 const Container = styled.div`
@@ -107,6 +115,5 @@ label{
 
 }
 button{
-
-}
-`;
+margin: 1% auto;
+}`;

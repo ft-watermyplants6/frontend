@@ -27,7 +27,8 @@ const Image = styled.img`
   margin: 3%;
   height: 60vh;
   width: 90%;
-  /* background-size: cover; */
+  border-radius: 50%;
+
   `;
 
 const Container = styled.div`
