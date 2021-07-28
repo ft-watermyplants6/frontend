@@ -58,10 +58,10 @@ export default function AddPlantForm(props) {
                     </label>
 
                     <label>
-                        h2o Frequency:
+                        h2o interval:
                         <select
-                            name="h2ofrequency"
-                            value={values.h2ofrequency}
+                            name="h2ointerval"
+                            value={values.h2ointerval}
                             onChange={onChange}
                         >
                             <option value="">- Select an option -</option>
@@ -89,7 +89,7 @@ export default function AddPlantForm(props) {
                     <div className="errors">
                         <div>{errors.nickname}</div>
                         <div>{errors.species}</div>
-                        <div>{errors.h2ofrequency}</div>
+                        <div>{errors.h2ointerval}</div>
                         <div>{errors.image}</div>
                     </div>
                     <div>
