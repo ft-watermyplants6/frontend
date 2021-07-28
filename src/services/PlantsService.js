@@ -1,5 +1,6 @@
 import axios from "axios"
+import axiosWithAuth from "../utils/axiosWithAuth"
 
 export const getPlants = () => {
-    return axios.get(`https://pokeapi.co/api/v2/pokemon/`)
+    return axiosWithAuth().get(`https://ft-watermyplants-1.herokuapp.com`)
 }

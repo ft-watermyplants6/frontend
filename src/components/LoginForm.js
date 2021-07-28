@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import axios from 'axios'
 
 class LoginForm extends React.Component {
   state = {
@@ -19,24 +20,32 @@ class LoginForm extends React.Component {
     })
   }
 
-  // login = e => {
-  //   e.preventDefault();
-  //   axios.post('', this.state.credentials)
-  //     .then(res => {
-  //       localStorage.setItem('token', res.data.token);
-  //       localStorage.setItem('username', res.data.username);
-  //       this.props.history.push("/protected");
-  //     })
-  //     .catch(err=>{
-  //       console.log(err);
-  //     })
+  login = e => {
+    e.preventDefault();
+    axios.post('https://ft-watermyplants-1.herokuapp.com/api/auth/login', this.state.credentials)
+      .then(res => {
+        console.log('res: ', res)
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('username', res.data.username);
+        this.props.history.push("/plantList");
+      })
+      .catch(err=>{
+        console.log(err)
+        alert('Username and/or password is incorrect')
+      })
+    }
+    
+    onClick = e => {
+      e.preventDefault()
+      this.props.history.push('/signup')
+    }
 
   render() {
     return (
       <Container>
         
         <div>
-          <form id="form">
+          <form id="form" onSubmit={this.login}>
             
            
             <label>Username:
@@ -62,6 +71,7 @@ class LoginForm extends React.Component {
             
           
             <button>Log in</button>
+            <button>Create Account</button>
             
           </form>
         </div>
