@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { getPlants } from '../services/PlantsService'
+// import axiosWithAuth from '../axiosWithAuth'
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -11,7 +11,7 @@ export default class PlantList extends Component {
     }
 
     // componentDidMount() {
-    //     getPlants()
+    //     axiosWithAuth().get('/api/plants')
     //         .then(res => {
     //             console.log(res)
     //             this.setState({
