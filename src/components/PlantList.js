@@ -14,8 +14,9 @@ export default class PlantList extends Component {
             .then(res => {
                 console.log(res)
                 this.setState({
-                    plants: res.data.results
+                    plants: res.data
                 })
+                console.log('plants: ', this.state.plants)
             })
             .catch(err => {
                 console.log(err)
@@ -35,15 +36,17 @@ export default class PlantList extends Component {
     render() {
         return (
             <Plantlist>
-                {/* <main className='plant-list'>
+                <main className='plant-list'>
                     {this.state.plants.map((plant) => (
-                        <div className='plant-card' key={plant.name}>
+                        <div className='plant-card' key={plant.plantID}>
                             <div className='plant-details'>
-                                <h2>{plant.name}</h2>
+                                <h2>{plant.nickname}</h2>
+                                <p>Amount of Water Needed: {plant.h2oAmount}</p>
+                                <p>How often I need watered: {plant.h2oInterval}</p>
                             </div>
                         </div>
                     ))}
-                </main> */}
+                </main>
             </Plantlist>
         )
     }
