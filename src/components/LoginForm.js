@@ -48,8 +48,8 @@ class LoginForm extends React.Component {
             </label>
         
             
-          
-            <button>Log in</button>
+          <div><button>Log in</button></div>
+            
             
           </form>
         </div>
