@@ -68,7 +68,7 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-div.App{
+div {
   @media (max-width: 768px) {
       background: rgb(124, 124, 64);
     }
@@ -101,6 +101,9 @@ background-color: rgb(179, 170, 170);
 padding: 1%;
 border-radius: 25%;
 margin: 0 1%;
+@media (max-width: 768px) {
+  background-color: rgb(233, 233, 127);
+}
 &:hover{
     background-color: rgb(11, 223, 57);
     transform:scale(1.25);
