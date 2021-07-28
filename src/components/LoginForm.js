@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import axios  from 'axios';
 
@@ -8,6 +8,11 @@ class LoginForm extends React.Component {
       username: '',
       password: ''
     }
+  }
+  constructor(props){
+    super(props)
+    this.setToggle = props.setToggle
+    console.log('this.setToggle', this.setToggle)
   }
 
   handleChange = e => {
@@ -25,7 +30,7 @@ class LoginForm extends React.Component {
       .then(res => {
         console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
-        this.props.history.push("/protected");
+        this.setToggle()
       })
       .catch(err=>{
         console.log(err);
