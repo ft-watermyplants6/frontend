@@ -6,14 +6,14 @@
 // const initialFormValues = {
 //     nickname: "",
 //     species: "",
-//     h2ofrequency: "",
+//     h2oInterval: "",
 //     image: "",
 // };
 
 // const initialFormErrors = {
 //     nickname: "",
 //     species: "",
-//     h2ofrequency: "",
+//     h2oInterval: "",
 //     image: "",
 // };
 
@@ -33,14 +33,14 @@ import styled from 'styled-components';
 const initialFormValues = {
     nickname: "",
     species: "",
-    h2ofrequency: "",
+    h2oInterval: "",
     image: "",
 };
 
 const initialFormErrors = {
     nickname: "",
     species: "",
-    h2ofrequency: "",
+    h2oInterval: "",
     image: "",
 };
 
@@ -137,13 +137,13 @@ export default function EditPlant() {
         const newPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            h2ofrequency: formValues.h2ofrequency.trim(),
+            h2oInterval: formValues.h2oInterval.trim(),
             image: formValues.image.trim()
         }
         const editPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            h2ofrequency: formValues.h2ofrequency.trim(),
+            h2oInterval: formValues.h2oInterval.trim(),
             image: formValues.image.trim(),
         }
 
