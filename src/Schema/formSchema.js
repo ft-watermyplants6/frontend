@@ -6,15 +6,15 @@ export default yup.object().shape({
         .string()
         .required("Plant name is required")
         .min(2, "name must be at least 2 characters"),
-    species: yup
-        .string()
-        .required("Species is required")
-        .min(2, "name must be at least 2 characters"),
+    // species: yup
+    //     .string()
+    //     .required("Species is required")
+    //     .min(2, "name must be at least 2 characters"),
     h2oInterval: yup
         .number()
         .required("must number times per month"),
-    image: yup
+    h2oAmount: yup
         .string()
-        .required("Imgage must be in URL format"),
+        .required("You must tell me how much water"),
 
 })

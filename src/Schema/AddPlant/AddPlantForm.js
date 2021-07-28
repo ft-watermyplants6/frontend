@@ -36,7 +36,7 @@ export default function AddPlantForm(props) {
                         <input
                             name="nickname"
                             type="text"
-                            value={values.name}
+                            value={values.nickname}
                             onChange={onChange}
                             placeholder="type your plant name"
                             maxLength="30"
@@ -44,7 +44,7 @@ export default function AddPlantForm(props) {
                         />
                     </label>
 
-                    <label>
+                    {/* <label>
                         Species:
                         <input
                             name="species"
@@ -55,7 +55,7 @@ export default function AddPlantForm(props) {
                             maxLength="30"
                             id="name-input"
                         />
-                    </label>
+                    </label> */}
 
                     <label>
                         h2oInterval:
@@ -69,13 +69,13 @@ export default function AddPlantForm(props) {
                     </label>
 
                     <label>
-                        Add Image:
+                        h2oAmount:
                         <input
-                            name="image"
-                            value={values.email}
+                            name="h2oAmount"
+                            value={values.h2oAmount}
                             type="text"
                             onChange={onChange}
-                            placeholder="Add Image URL"
+                            placeholder="How much water?"
                         />
                     </label>
 
@@ -85,9 +85,9 @@ export default function AddPlantForm(props) {
 
                     <div className="errors">
                         <div>{errors.nickname}</div>
-                        <div>{errors.species}</div>
-                        <div>{errors.h2ointerval}</div>
-                        <div>{errors.image}</div>
+                        {/* <div>{errors.species}</div> */}
+                        <div>{errors.h2oInterval}</div>
+                        <div>{errors.h2oAmount}</div>
                     </div>
                     <div>
                         <Image

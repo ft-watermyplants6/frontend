@@ -5,8 +5,7 @@ import styled from 'styled-components'
 
 export default class PlantList extends Component {
     state = {
-        plants: [],
-        dogs: ''
+        plants: []
     }
 
     componentDidMount() {
@@ -22,16 +21,6 @@ export default class PlantList extends Component {
                 console.log(err)
             })
     }
-
-    // componentDidMount() {
-    //     axios.get('https://dog.ceo/api/breeds/image/random')
-    //          .then(res => {
-    //              console.log(res.data.message)
-    //              this.setState({
-    //                  dogs: res.data.message
-    //              })
-    //          })
-    // }
 
     render() {
         return (
