@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import AddSuccess from './Schema/AddPlant/AddSuccess'
 import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
+import SignupForm from './components/SignupForm';
 // import axiosWithAuth from './axiosWithAuth'
 
 
@@ -49,6 +50,7 @@ function App() {
           <Route path='/addPlant' component={AddPlant}/>
           <Route path='/editPlant' component={EditPlant}/>
           <Route path='/plantList' component={PlantList}/>
+          <Route path='/signUp' component={SignupForm}/>
         </Switch>
       </Wrapper>
 
