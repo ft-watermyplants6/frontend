@@ -45,10 +45,10 @@ export default class PlantList extends Component {
                         </div>
                     ))}
                 </main>
-                <img src={this.state.dogs} alt='dog image'/>
-                <img src={this.state.dogs} alt='dog image'/>
-                <img src={this.state.dogs} alt='dog image'/>
-                <img src={this.state.dogs} alt='dog image'/>
+                <img src={this.state.dogs} alt=''/>
+                <img src={this.state.dogs} alt=''/>
+                <img src={this.state.dogs} alt=''/>
+                <img src={this.state.dogs} alt=''/>
             </Plantlist>
         )
     }
