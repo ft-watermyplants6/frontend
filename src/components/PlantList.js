@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import axiosWithAuth from '../utils/axiosWithAuth'
+import { getPlant } from '../actions'
+import { getPlants } from '../services/PlantsService'
 
 export default class PlantList extends Component {
     state={
@@ -9,10 +10,10 @@ export default class PlantList extends Component {
         dogs: ''
     }
 
-    componentDidMount(user_id) {
-        axiosWithAuth().get(`/api/users/${user_id}/plants`)
+    componentDidMount() {
+        getPlants()
              .then(res => {
-                 console.log(res)
+                 console.log('res: ', res)
                  this.setState({
                      plants: res.data.results
                  })
