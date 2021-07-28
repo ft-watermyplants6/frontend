@@ -62,8 +62,9 @@ export default function AddPlantForm(props) {
                         <input
                             name="h2oInterval"
                             value={values.h2oInterval}
-                            type="text"
+                            type="number"
                             onChange={onChange}
+                            placeholder="number times per month"
                         />
                     </label>
 

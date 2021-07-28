@@ -4,12 +4,10 @@ import axios from "axios";
 import schema from "../formSchema";
 import AddPlantForm from "./AddPlantForm"
 
-
-
 const initialFormValues = {
     nickname: "",
     species: "",
-    h2oInterval: null,
+    h2oInterval: "",
     image: "",
 };
 
@@ -22,7 +20,6 @@ const initialFormErrors = {
 
 const plantList = [];
 const initialDisabled = true;
-
 
 export default function AddPlant() {
     const [plants, setPlants] = useState(plantList);
