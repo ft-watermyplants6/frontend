@@ -15,50 +15,50 @@ import { useState } from 'react';
 
 
 function App() {
-  const [ toggle, setToggle ] = useState(false)
+  const [toggle, setToggle] = useState(false)
   const flipToggle = () => {
     setToggle(!toggle)
     console.log('im here!')
     window.location.href = '/plantList'
   }
   const logout = () => {
-        window.localStorage.removeItem('token')
-        window.location.href = '/login'
+    window.localStorage.removeItem('token')
+    window.location.href = '/login'
   };
 
   return (
     <Router>
       <div className='App'>
-      <Wrapper>
+        <Wrapper>
 
-        <h1>Water My Plants</h1>
-        <nav className="home-login-subscribe">
-          <Link className='links' to='/'>HOME</Link>
-          <Link className='links' to='/login'>LogIn</Link>
-          <Link className='links' to='/logout' onClick={logout}>Logout</Link>
+          <h1>Water My Plants</h1>
+          <nav className="home-login-subscribe">
+            <Link className='links' to='/'>HOME</Link>
+            <Link className='links' to='/login'>LogIn</Link>
+            <Link className='links' to='/logout' onClick={logout}>Logout</Link>
 
-          {localStorage.getItem('token') ?
-          <Link className='links' to='/plantList'>View Plants</Link> : <div></div>}
+            {localStorage.getItem('token') ?
+              <Link className='links' to='/plantList'>View Plants</Link> : <div></div>}
 
-          {localStorage.getItem('token') ?
-          <Link className='links' to='/addPlant' id="add-plant">Add a Plant</Link> : <div></div>}
+            {localStorage.getItem('token') ?
+              <Link className='links' to='/addPlant' id="add-plant">Add a Plant</Link> : <div></div>}
 
-          {localStorage.getItem('token') ?
-          <Link className='links' to='/editPlant' id="edit-plant">Edit a Plant</Link> : <div></div>}
-          
-        </nav>
-        <Switch>
-          <PrivateRoute path='/AddSuccess' component={AddSuccess}/>
-          <PrivateRoute path='/EditPlantSuccess' component={EditPlantSuccess}/>
-          <PrivateRoute path='/addPlant' component={AddPlant}/>
-          <PrivateRoute path='/editPlant' component={EditPlant}/>
-          <PrivateRoute path='/plantList' component={PlantList}/>
-          <Route exact path='/' component={Home}/>
-          <Route path='/login'><LoginForm setToggle={flipToggle}/></Route>
-          <Route path='/signUp' component={SignupForm}/>
-          
-        </Switch>
-      </Wrapper>
+            {localStorage.getItem('token') ?
+              <Link className='links' to='/editPlant' id="edit-plant">Edit a Plant</Link> : <div></div>}
+
+          </nav>
+          <Switch>
+            <PrivateRoute path='/AddSuccess' component={AddSuccess} />
+            <PrivateRoute path='/EditPlantSuccess' component={EditPlantSuccess} />
+            <PrivateRoute path='/addPlant' component={AddPlant} />
+            <PrivateRoute path='/editPlant' component={EditPlant} />
+            <PrivateRoute path='/plantList' component={PlantList} />
+            <Route exact path='/' component={Home} />
+            <Route path='/login'><LoginForm setToggle={flipToggle} /></Route>
+            <Route path='/signUp' component={SignupForm} />
+
+          </Switch>
+        </Wrapper>
 
       </div>
     </Router>
@@ -74,11 +74,21 @@ h1{
     color: black;
     padding-left: 2%;
     margin-bottom: 2%;
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+		text-align: center;
+    }
     
 }
 nav{
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 a{
 text-decoration: none;
@@ -93,4 +103,5 @@ margin: 0 1%;
 }
  transition: all 0.5s ease-in-out;
 }
+
 `;
