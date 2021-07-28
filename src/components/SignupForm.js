@@ -1,6 +1,5 @@
 import React from 'react'
-import axios from 'axios';
-import styled from 'styled-components';
+import {axiosWithAuth} from '../axiosWithAuth';
 
 class SignupForm extends React.Component {
 
@@ -24,10 +23,10 @@ class SignupForm extends React.Component {
 
   login = e => {
     e.preventDefault();
-    axios.post('', this.state.credentials)
+    axiosWithAuth().post('/api/auth/register', this.state.credentials)
       .then(res => {
+        console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
-        localStorage.setItem('username', res.data.username);
         this.props.history.push("/protected");
       })
       .catch(err => {
@@ -37,9 +36,8 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <Container>
       <div>
-        <form>
+        <form onSubmit={this.login}>
           <label>Username:
             <input
               type='text'
@@ -68,7 +66,6 @@ class SignupForm extends React.Component {
           <button>Sign Up</button>
         </form>
       </div>
-      </Container>
 
     )
   }
