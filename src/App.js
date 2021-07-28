@@ -68,6 +68,11 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
+div.App{
+  @media (max-width: 768px) {
+      background: rgb(124, 124, 64);
+    }
+}
 h1{
     font-family: 'Chelsea Market', cursive;
     font-size: 2rem;
