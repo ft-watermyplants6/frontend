@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
+import axios  from 'axios';
 
 class LoginForm extends React.Component {
   state = {
     credentials: {
       username: '',
-      phoneNumber: '',
       password: ''
     }
   }
@@ -19,12 +19,29 @@ class LoginForm extends React.Component {
     })
   }
 
+  login = e => {
+    e.preventDefault();
+    axios.post('https://wmp-api.herokuapp.com/api/auth/login', this.state.credentials)
+      .then(res => {
+        console.log('res: ', res)
+        localStorage.setItem('token', res.data.token);
+        this.props.history.push("/protected");
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    }
+
+    onClick = () => {
+      this.props.history.push('/signUp')
+    }
+
   render() {
     return (
       <Container>
         
         <div>
-          <form id="form">
+          <form id="form" onClick={this.login}>
             
            
             <label>Username:
@@ -48,8 +65,9 @@ class LoginForm extends React.Component {
             </label>
         
             
-          <div><button>Log in</button></div>
-            
+          
+            <button>Log in</button>
+            <button onClick={this.onClick}>Sign up</button>
             
           </form>
         </div>

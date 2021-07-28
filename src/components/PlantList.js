@@ -1,34 +1,48 @@
 import React, { Component } from 'react'
-import { getPlants } from '../services/PlantsService'
+import { axiosWithAuth } from '../axiosWithAuth'
 import styled from 'styled-components'
+// import axios from 'axios'
 
 export default class PlantList extends Component {
     state = {
-
-        plants: []
+        plants: [],
+        dogs: ''
     }
 
     componentDidMount() {
-        getPlants()
+        axiosWithAuth().get('/api/plants')
             .then(res => {
                 console.log(res)
                 this.setState({
-                    plants: res.data.results
+                    plants: res.data
                 })
+                console.log('plants: ', this.state.plants)
             })
             .catch(err => {
                 console.log(err)
             })
     }
 
+    // componentDidMount() {
+    //     axios.get('https://dog.ceo/api/breeds/image/random')
+    //          .then(res => {
+    //              console.log(res.data.message)
+    //              this.setState({
+    //                  dogs: res.data.message
+    //              })
+    //          })
+    // }
+
     render() {
         return (
             <Plantlist>
                 <main className='plant-list'>
                     {this.state.plants.map((plant) => (
-                        <div className='plant-card' key={plant.name}>
+                        <div className='plant-card' key={plant.plantID}>
                             <div className='plant-details'>
-                                <h2>{plant.name}</h2>
+                                <h2>{plant.nickname}</h2>
+                                <p>Amount of Water Needed: {plant.h2oAmount}</p>
+                                <p>How often I need watered: {plant.h2oInterval}</p>
                             </div>
                         </div>
                     ))}
