@@ -1,5 +1,6 @@
 import React from 'react'
 import {axiosWithAuth} from '../axiosWithAuth';
+import styled from 'styled-components';
 
 class SignupForm extends React.Component {
 
@@ -36,6 +37,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
+      <Container>
       <div>
         <form onSubmit={this.login}>
           <label>Username:
@@ -66,6 +68,7 @@ class SignupForm extends React.Component {
           <button>Sign Up</button>
         </form>
       </div>
+      </Container>
 
     )
   }
