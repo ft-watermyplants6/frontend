@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axiosWithAuth from '../axiosWithAuth'
+import {axiosWithAuth} from '../axiosWithAuth'
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -10,33 +10,33 @@ export default class PlantList extends Component {
         dogs: ''
     }
 
-    // componentDidMount() {
-    //     axiosWithAuth().get('/api/plants')
-    //         .then(res => {
-    //             console.log(res)
-    //             this.setState({
-    //                 plants: res.data.results
-    //             })
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
-
     componentDidMount() {
-        axios.get('https://dog.ceo/api/breeds/image/random')
-             .then(res => {
-                 console.log(res.data.message)
-                 this.setState({
-                     dogs: res.data.message
-                 })
-             })
+        axiosWithAuth().get('/api/plants')
+            .then(res => {
+                console.log(res)
+                this.setState({
+                    plants: res.data.results
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
+
+    // componentDidMount() {
+    //     axios.get('https://dog.ceo/api/breeds/image/random')
+    //          .then(res => {
+    //              console.log(res.data.message)
+    //              this.setState({
+    //                  dogs: res.data.message
+    //              })
+    //          })
+    // }
 
     render() {
         return (
             <Plantlist>
-                <main className='plant-list'>
+                {/* <main className='plant-list'>
                     {this.state.plants.map((plant) => (
                         <div className='plant-card' key={plant.name}>
                             <div className='plant-details'>
@@ -44,11 +44,7 @@ export default class PlantList extends Component {
                             </div>
                         </div>
                     ))}
-                </main>
-                <img src={this.state.dogs} alt=''/>
-                <img src={this.state.dogs} alt=''/>
-                <img src={this.state.dogs} alt=''/>
-                <img src={this.state.dogs} alt=''/>
+                </main> */}
             </Plantlist>
         )
     }
