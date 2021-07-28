@@ -9,14 +9,14 @@ import AddPlantForm from "./AddPlantForm"
 const initialFormValues = {
     nickname: "",
     species: "",
-    h2oInterval: null,
+    h2oInterval: "",
     image: "",
 };
 
 const initialFormErrors = {
     nickname: "",
     species: "",
-    h2oInterval: null,
+    h2oInterval: "",
     image: "",
 };
 
