@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import {axiosWithAuth} from '../axiosWithAuth'
 import styled from 'styled-components'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default class PlantList extends Component {
     state = {
-
         plants: [],
         dogs: ''
     }
