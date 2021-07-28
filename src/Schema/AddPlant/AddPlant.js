@@ -3,23 +3,25 @@ import * as yup from "yup";
 import axios from "axios";
 import schema from "../formSchema";
 import AddPlantForm from "./AddPlantForm"
+import { axiosWithAuth } from "../../axiosWithAuth";
+
+
 
 const initialFormValues = {
     nickname: "",
-    species: "",
-    h2oInterval: "",
-    image: "",
+    h2oInterval: 0,
+    h2oAmount: ''
 };
 
 const initialFormErrors = {
     nickname: "",
-    species: "",
     h2oInterval: "",
-    image: "",
+    h2oAmount: "",
 };
 
 const plantList = [];
 const initialDisabled = true;
+
 
 export default function AddPlant() {
     const [plants, setPlants] = useState(plantList);
@@ -31,7 +33,7 @@ export default function AddPlant() {
     //     return setPlants(formValues)
     // }
 
-    //   AXIOS PLACE HOLDERS ====================
+    //   axiosWithAuth()
     //     .get("https://reqres.in/api/orders")
     //     .then((res) => {
     //       setPizzas(res.data.data);
@@ -42,10 +44,11 @@ export default function AddPlant() {
     //       console.log(err);
     //     });
     // };
-
+    
     const postNewPlant = (newPlant) => {
-        axios
-            .post("???????", newPlant)
+        console.log('newPlant:', newPlant)
+        axiosWithAuth()
+            .post("/api/plants", newPlant)
             .then((res) => {
                 setPlants([...plants, res.data]);
                 setFormValues(initialFormValues);
@@ -58,8 +61,8 @@ export default function AddPlant() {
     };
 
     const putNewPlant = (editPlant) => {
-        axios
-            .put("???????", editPlant)
+        axiosWithAuth()
+            .put("/api/plants", editPlant)
             .then((res) => {
                 setPlants([...plants, res.data]);
                 setFormValues(initialFormValues);
@@ -108,21 +111,19 @@ export default function AddPlant() {
     //SUBMIT HANDLER
     const formSubmit = () => {
         const newPlant = {
-            nickname: formValues.nickname.trim(),
-            species: formValues.species.trim(),
-            h2oInterval: formValues.h2oInterval.trim(),
-            image: formValues.image.trim()
+            nickname: formValues.nickname,
+            h2oInterval: formValues.h2oInterval,
+            h2oAmount: formValues.h2oAmount
         }
         const editPlant = {
             nickname: formValues.nickname.trim(),
-            species: formValues.species.trim(),
-            h2oInterval: formValues.h2oInterval.trim(),
-            image: formValues.image.trim(),
+            h2oInterval: formValues.h2oInterval,
+            h2oAmount: formValues.h2oAmount.trim(),
         }
 
-
+        
         postNewPlant(newPlant);
-        putNewPlant(editPlant);
+        // putNewPlant(editPlant);
     }
 
 
