@@ -1,24 +1,36 @@
 import React, { Component } from 'react'
-import { getPlants } from '../services/PlantsService'
+// import { getPlants } from '../services/PlantsService'
 import styled from 'styled-components'
+import axios from 'axios'
 
 export default class PlantList extends Component {
     state = {
 
-        plants: []
+        plants: [],
+        dogs: ''
     }
 
+    // componentDidMount() {
+    //     getPlants()
+    //         .then(res => {
+    //             console.log(res)
+    //             this.setState({
+    //                 plants: res.data.results
+    //             })
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
+
     componentDidMount() {
-        getPlants()
-            .then(res => {
-                console.log(res)
-                this.setState({
-                    plants: res.data.results
-                })
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        axios.get('https://dog.ceo/api/breeds/image/random')
+             .then(res => {
+                 console.log(res.data.message)
+                 this.setState({
+                     dogs: res.data.message
+                 })
+             })
     }
 
     render() {
@@ -33,6 +45,10 @@ export default class PlantList extends Component {
                         </div>
                     ))}
                 </main>
+                <img src={this.state.dogs} alt='dog image'/>
+                <img src={this.state.dogs} alt='dog image'/>
+                <img src={this.state.dogs} alt='dog image'/>
+                <img src={this.state.dogs} alt='dog image'/>
             </Plantlist>
         )
     }
