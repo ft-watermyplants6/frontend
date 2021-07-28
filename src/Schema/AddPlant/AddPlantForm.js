@@ -58,17 +58,13 @@ export default function AddPlantForm(props) {
                     </label>
 
                     <label>
-                        h2o Frequency:
-                        <select
-                            name="h2ofrequency"
-                            value={values.h2ofrequency}
+                        h2oInterval:
+                        <input
+                            name="h2oInterval"
+                            value={values.h2oInterval}
+                            type="text"
                             onChange={onChange}
-                        >
-                            <option value="">- Select an option -</option>
-                            <option value="daily">Daily</option>
-                            <option value="weekly">Weekly</option>
-                            <option value="monthly">Monthly</option>
-                        </select>
+                        />
                     </label>
 
                     <label>
@@ -89,7 +85,7 @@ export default function AddPlantForm(props) {
                     <div className="errors">
                         <div>{errors.nickname}</div>
                         <div>{errors.species}</div>
-                        <div>{errors.h2ofrequency}</div>
+                        <div>{errors.h2ointerval}</div>
                         <div>{errors.image}</div>
                     </div>
                     <div>

@@ -9,14 +9,14 @@ import AddPlantForm from "./AddPlantForm"
 const initialFormValues = {
     nickname: "",
     species: "",
-    h2ofrequency: "",
+    h2oInterval: null,
     image: "",
 };
 
 const initialFormErrors = {
     nickname: "",
     species: "",
-    h2ofrequency: "",
+    h2oInterval: null,
     image: "",
 };
 
@@ -60,7 +60,7 @@ export default function AddPlant() {
             })
     };
 
-    const putNewPlant = (editPlant) => { 
+    const putNewPlant = (editPlant) => {
         axios
             .put("???????", editPlant)
             .then((res) => {
@@ -92,7 +92,7 @@ export default function AddPlant() {
                     [name]: err.errors[0],
                 });
             });
-            setFormValues({...formValues, [name]: value})
+        setFormValues({ ...formValues, [name]: value })
     };
 
     useEffect(() => {
@@ -113,17 +113,17 @@ export default function AddPlant() {
         const newPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            h2ofrequency: formValues.h2ofrequency.trim(),
+            h2oInterval: formValues.h2oInterval.trim(),
             image: formValues.image.trim()
         }
         const editPlant = {
             nickname: formValues.nickname.trim(),
             species: formValues.species.trim(),
-            h2ofrequency: formValues.h2ofrequency.trim(),
+            h2oInterval: formValues.h2oInterval.trim(),
             image: formValues.image.trim(),
         }
 
-        
+
         postNewPlant(newPlant);
         putNewPlant(editPlant);
     }

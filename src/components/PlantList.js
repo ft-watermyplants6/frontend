@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {axiosWithAuth} from '../axiosWithAuth'
+import { axiosWithAuth } from '../axiosWithAuth'
 import styled from 'styled-components'
 // import axios from 'axios'
 

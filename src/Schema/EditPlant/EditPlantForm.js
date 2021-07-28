@@ -10,7 +10,7 @@ export default function EditPlantForm(props) {
 
     const onChange = (evt) => {
         const { name, value } = evt.target
-        
+
         change(name, value)
     }
     const onSubmit = (evt) => {
@@ -20,11 +20,11 @@ export default function EditPlantForm(props) {
     }
     return (
         <Container>
-        <form className="edit-plant contatiner" id="edit-plant-form" onChange={onChange} onSubmit={onSubmit}>
-            <div className="form-group submit">
-                <h2>Edit Plant</h2>
-            </div>
-            
+            <form className="edit-plant contatiner" id="edit-plant-form" onChange={onChange} onSubmit={onSubmit}>
+                <div className="form-group submit">
+                    <h2>Edit Plant</h2>
+                </div>
+
                 <label>Plant Name
                     <input
                         name='nickname'
@@ -36,8 +36,8 @@ export default function EditPlantForm(props) {
                         id='name-input'
                     />
                 </label>
-            
-            
+
+
                 <label>Species
                     <input
                         name='species'
@@ -49,12 +49,12 @@ export default function EditPlantForm(props) {
                         id='name-input'
                     />
                 </label>
-            
-            
-                <label>h2o Frequency
+
+
+                <label>h2o Interval
                     <select
-                        name='h2ofrequency'
-                        value={values.h2ofrequency}
+                        name='h2oInterval'
+                        value={values.h2oInterval}
                         onChange={onChange}
                     >
                         <option value=''>- Select an option -</option>
@@ -63,8 +63,8 @@ export default function EditPlantForm(props) {
                         <option value='monthly'>Monthly</option>
                     </select>
                 </label>
-            
-            
+
+
                 <label>Add Image
                     <input
                         name='image'
@@ -75,19 +75,19 @@ export default function EditPlantForm(props) {
                     />
                 </label>
 
-           
-
-            <button id="order-button" disabled={disabled}>Edit a Plant</button>
-
-            <div className='errors'>
-                <div>{errors.nickname}</div>
-                <div>{errors.species}</div>
-                <div>{errors.h2ofrequency}</div>
-                <div>{errors.image}</div>
-            </div>
 
 
-        </form>
+                <button id="order-button" disabled={disabled}>Edit a Plant</button>
+
+                <div className='errors'>
+                    <div>{errors.nickname}</div>
+                    <div>{errors.species}</div>
+                    <div>{errors.h2oInterval}</div>
+                    <div>{errors.image}</div>
+                </div>
+
+
+            </form>
         </Container>
     )
 }
