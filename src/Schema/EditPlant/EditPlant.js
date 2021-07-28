@@ -1,34 +1,9 @@
-// import React, {useState, useEffect} from "react";
-// import * as yup from "yup";
-// import axios from "axios";
-// import schema from "../formSchema";
-
-// const initialFormValues = {
-//     nickname: "",
-//     species: "",
-//     h2oInterval: "",
-//     image: "",
-// };
-
-// const initialFormErrors = {
-//     nickname: "",
-//     species: "",
-//     h2oInterval: "",
-//     image: "",
-// };
-
-// const plantList = [];
-// const initialDisabled = true;
-// export default function DeletePlant (){
-//     const [plants, setPlants]
-// }
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
 import schema from "../formSchema";
 import EditPlantForm from "./EditPlantForm";
 import styled from 'styled-components';
-
 
 const initialFormValues = {
     nickname: "",
@@ -46,7 +21,6 @@ const initialFormErrors = {
 
 const plantList = [];
 const initialDisabled = true;
-
 
 export default function EditPlant() {
     const [plants, setPlants] = useState(plantList);
