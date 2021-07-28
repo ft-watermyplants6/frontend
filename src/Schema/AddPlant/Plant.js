@@ -29,4 +29,9 @@ const Plantcard = styled.div`
   position: relative;
   margin: 1rem auto;
 }
+@media (max-width: 800px) {
+	.plant {
+	  background: rgb(189, 189, 146);
+	  background-color: #E0E1E3;
+	}
 `;

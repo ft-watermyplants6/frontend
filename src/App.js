@@ -9,13 +9,23 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import AddSuccess from './Schema/AddPlant/AddSuccess'
 import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
+// import axiosWithAuth from './axiosWithAuth'
 
 
 function App() {
 
-  // const logout = () => {
-  //   window.localStorage.removeItem('token');
-  // };
+  const logout = () => {
+    // axiosWithAuth()
+    //   .post('/logout')
+    //   .then(res => {
+    //     localStorage.removeItem('token')
+    //     localStorage.removeItem('username')
+        window.location.href = '/login'
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+  };
 
   return (
     <Router>
@@ -25,10 +35,11 @@ function App() {
         <h1>Water My Plants</h1>
         <nav className="home-login-subscribe">
           <Link className='links' to='/'>HOME</Link>
-          <Link className='links' to='/login'>LogIn/Out</Link>
+          <Link className='links' to='/login'>LogIn</Link>
           <Link className='links' to='/plantList'>View Plants</Link>
           <Link className='links' to='/addPlant' id="add-plant">Add a Plant</Link>
           <Link className='links' to='/editPlant' id="edit-plant">Edit a Plant</Link>
+          <Link className='links' to='/logout' onClick={logout}>Logout</Link>
         </nav>
         <Switch>
           <Route exact path='/' component={Home}/>
