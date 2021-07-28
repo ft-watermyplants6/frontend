@@ -37,3 +37,18 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 800px) {
+	.plant {
+	  background: rgb(189, 189, 146);
+	  background-color: #E0E1E3;
+	}
+	.container{
+		display: flex;
+	}
+	.card{
+		width: 50%;
+		display: flex;
+		
+	}
+  }
