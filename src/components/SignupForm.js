@@ -46,6 +46,7 @@ class SignupForm extends React.Component {
               name='username'
               value={this.state.credentials.username}
               onChange={this.handleChange}
+              placeholder="Choose a new username"
             />
           </label>
           <label>Phone Number:
@@ -55,6 +56,7 @@ class SignupForm extends React.Component {
               pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
               value={this.state.credentials.phoneNumber}
               onChange={this.handleChange}
+              placeholder="format = 555-555-5555"
             />
           </label>
           <label>Password:
@@ -63,6 +65,7 @@ class SignupForm extends React.Component {
               name='password'
               value={this.state.credentials.password}
               onChange={this.handleChange}
+              placeholder='Choose a new password'
             />
           </label>
           <button>Sign Up</button>
