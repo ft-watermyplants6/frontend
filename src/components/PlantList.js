@@ -1,56 +1,71 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth'
 import styled from 'styled-components'
 // import axios from 'axios'
-import { Redirect } from 'react-router'
+import { useHistory } from 'react-router-dom';
 
-export default class PlantList extends Component {
-    state = {
-        plants: [],
-        redirect: false
-    }
+export default function PlantList() {
+    const [plants, setPlants] = useState([]);
 
-    componentDidMount() {
+    const history = useHistory();
+
+    useEffect(() => {
         axiosWithAuth().get('/api/plants')
             .then(res => {
                 console.log(res)
-                this.setState({
-                    plants: res.data
-                })
-                console.log('plants: ', this.state.plants)
+                setPlants(res.data);
+                console.log('plants: ', plants);
             })
             .catch(err => {
                 console.log(err)
             })
-    }
+    }, []);
 
-    editPlant = () => {
-        this.setState({redirect: true})
-    }
+    const deletePlant = (id) => {
+        setPlants(plants.filter((plant) => plant.id !== id));
+      };
 
-    render() {
-        const { redirect } = this.state
-        return (
-            <Plantlist>
-                {
-                    redirect === true ? <Redirect to='/editPlant'/> : <div></div>
-                }
-                <main className='plant-list'>
-                    {this.state.plants.map((plant) => (
-                        <div className='plant-card' key={plant.plantID}>
-                            <div className='plant-details'>
-                                <h2>{plant.nickname}</h2>
-                                <p>Amount of Water Needed: {plant.h2oAmount}</p>
-                                <p>How often I need watered: {plant.h2oInterval}</p>
-                                <button onClick={this.editPlant}>Edit</button> <button>Delete</button>
-                            </div>
+    useEffect(()=>{
+        
+    })
+
+      const deleteItem = (plant) => {
+        axiosWithAuth()
+          .delete(`/api/plants/${plant.plantID}`)
+          .then((res) => {
+            console.log(res);
+            deletePlant(plant.plantID);
+            axiosWithAuth().get('/api/plants')
+            .then(res => {
+                console.log(res)
+                setPlants(res.data);
+                console.log('plants: ', plants);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+          })
+          .catch((err) => console.log(err));
+      };  
+
+    return (
+        <Plantlist>
+            <main className='plant-list'>
+                {plants.map((plant) => (
+                    <div className='plant-card' key={plant.plantID}>
+                        <div className='plant-details'>
+                            <h2>{plant.nickname}</h2>
+                            <p>Amount of Water Needed: {plant.h2oAmount}</p>
+                            <p>How often I need watered: {plant.h2oInterval}</p>
+                            <button >Edit</button> <button onClick={() => deleteItem(plant)}>Delete</button>
                         </div>
-                    ))}
-                </main>
-            </Plantlist>
-        )
-    }
+                    </div>
+                ))}
+            </main>
+        </Plantlist>
+    )
 }
+
 
 
 const Plantlist = styled.div`
