@@ -21,7 +21,7 @@ We love JavaScript and React makes it easy.
 ## Instructions fro running this project
   - You need React and Node.js on your local environment. 
   - clone project
-  - in terminal ```npm install``
+  - in terminal ```npm install```
   - then ```npm start```
   - find all necesssary imports at the top of each file. 
   - Above all Have Fun!
