@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
-import axios from "axios";
 import schema from "../formSchema";
 import AddPlantForm from "./AddPlantForm"
 import { axiosWithAuth } from "../../axiosWithAuth";
@@ -59,7 +58,7 @@ export default function AddPlant() {
                 console.log(err);
             })
     };
-
+    /*eslint-disable-next-line */
     const putNewPlant = (editPlant) => {
         axiosWithAuth()
             .put("/api/plants", editPlant)
@@ -115,6 +114,7 @@ export default function AddPlant() {
             h2oInterval: formValues.h2oInterval,
             h2oAmount: formValues.h2oAmount
         }
+        /*eslint-disable-next-line */
         const editPlant = {
             nickname: formValues.nickname.trim(),
             h2oInterval: formValues.h2oInterval,
