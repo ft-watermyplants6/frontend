@@ -37,9 +37,6 @@ class LoginForm extends React.Component {
       })
   }
 
-  onClick = () => {
-    this.props.history.push('/signUp')
-  }
 
   render() {
     return (
@@ -71,7 +68,6 @@ class LoginForm extends React.Component {
             <div>
             <button>Log in</button>
             </div>
-            <button onClick={this.onClick}>Sign up</button>
 
           </form>
         </div>
