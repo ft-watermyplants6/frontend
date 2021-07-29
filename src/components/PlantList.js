@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth'
 import styled from 'styled-components'
-// import axios from 'axios'
-import { useHistory } from 'react-router-dom';
 
 export default function PlantList() {
     const [plants, setPlants] = useState([]);
 
-    const history = useHistory();
 
     useEffect(() => {
         axiosWithAuth().get('/api/plants')
@@ -21,13 +18,11 @@ export default function PlantList() {
             })
     }, []);
 
+
     const deletePlant = (id) => {
         setPlants(plants.filter((plant) => plant.id !== id));
       };
 
-    useEffect(()=>{
-        
-    })
 
       const deleteItem = (plant) => {
         axiosWithAuth()
@@ -47,6 +42,7 @@ export default function PlantList() {
           })
           .catch((err) => console.log(err));
       };  
+
 
     return (
         <Plantlist>
