@@ -12,6 +12,7 @@ import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
 import SignupForm from './components/SignupForm';
 import PrivateRoute from './components/PrivateRoute';
 import { useState } from 'react';
+import SignUpSuccess from './components/SignupSuccess';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
 
           </nav>
           <Switch>
+            <PrivateRoute path='/SignupSuccess' component={SignUpSuccess} />
             <PrivateRoute path='/AddSuccess' component={AddSuccess} />
             <PrivateRoute path='/EditPlantSuccess' component={EditPlantSuccess} />
             <PrivateRoute path='/addPlant' component={AddPlant} />

@@ -2,6 +2,7 @@ import React from 'react'
 import {axiosWithAuth} from '../axiosWithAuth';
 import styled from 'styled-components';
 
+
 class SignupForm extends React.Component {
 
 
@@ -28,7 +29,7 @@ class SignupForm extends React.Component {
       .then(res => {
         console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
-        this.props.history.push("/addPlant");
+        this.props.history.push("/SignupSuccess");
       })
       .catch(err => {
         console.log(err);
@@ -46,6 +47,7 @@ class SignupForm extends React.Component {
               name='username'
               value={this.state.credentials.username}
               onChange={this.handleChange}
+              placeholder="Choose a new username"
             />
           </label>
           <label>Phone Number:
@@ -55,6 +57,7 @@ class SignupForm extends React.Component {
               pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
               value={this.state.credentials.phoneNumber}
               onChange={this.handleChange}
+              placeholder="format = 555-555-5555"
             />
           </label>
           <label>Password:
@@ -63,6 +66,7 @@ class SignupForm extends React.Component {
               name='password'
               value={this.state.credentials.password}
               onChange={this.handleChange}
+              placeholder='Choose a new password'
             />
           </label>
           <button>Sign Up</button>
