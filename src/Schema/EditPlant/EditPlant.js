@@ -139,17 +139,12 @@ export default function EditPlant() {
                 />
             </div>
 
-            <div>
-                <Image src="https://images.unsplash.com/photo-1498569026542-39c64353e401?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fG1pc3NpbmclMjBwbGFudCUyMHNwb3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-            </div>
+
         </Container>
     )
 
 }
 
-const Image = styled.img`
-border: 1px solid black;
-margin: 3% ;
-height: 60vh; `
+
 
 const Container = styled.div``;
