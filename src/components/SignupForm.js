@@ -14,6 +14,11 @@ class SignupForm extends React.Component {
       phoneNumber: '',
     }
   };
+  constructor(props) {
+    super(props)
+    this.setToggle = props.setToggle
+    console.log('this.setToggle', this.setToggle)
+  }
 
   handleChange = e => {
     this.setState({
@@ -30,7 +35,7 @@ class SignupForm extends React.Component {
       .then(res => {
         console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
-        this.props.history.push("/SignupSuccess");
+        this.setToggle()
       })
       .catch(err => {
         console.log(err);
