@@ -38,9 +38,17 @@ function App() {
           <h1>Water My Plants</h1>
           <nav className="home-login-subscribe">
             <Link className='links' to='/'>HOME</Link>
+            {localStorage.getItem('token') ?
+            <div></div> :
             <Link className='links' to='/login'>LogIn</Link>
-            <Link className='links' to='/logout' onClick={logout}>Logout</Link>
+            }
+            {localStorage.getItem('token') ?
+            <Link className='links' to='/logout' onClick={logout}>Logout</Link> : <div></div>
+            }
+            {localStorage.getItem('token') ?
+            <div></div> :
             <Link className='links' to='/signUp' onClick={signUp}>Sign Up</Link>
+            }
 
             {localStorage.getItem('token') ?
               <Link className='links' to='/plantList'>View Plants</Link> : <div></div>}
