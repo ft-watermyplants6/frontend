@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth'
 import styled from 'styled-components'
 // import axios from 'axios'
+import { Redirect } from 'react-router'
 
 export default class PlantList extends Component {
     state = {
-        plants: []
+        plants: [],
+        redirect: false
     }
 
     componentDidMount() {
@@ -22,9 +24,17 @@ export default class PlantList extends Component {
             })
     }
 
+    editPlant = () => {
+        this.setState({redirect: true})
+    }
+
     render() {
+        const { redirect } = this.state
         return (
             <Plantlist>
+                {
+                    redirect === true ? <Redirect to='/editPlant'/> : <div></div>
+                }
                 <main className='plant-list'>
                     {this.state.plants.map((plant) => (
                         <div className='plant-card' key={plant.plantID}>
@@ -32,6 +42,7 @@ export default class PlantList extends Component {
                                 <h2>{plant.nickname}</h2>
                                 <p>Amount of Water Needed: {plant.h2oAmount}</p>
                                 <p>How often I need watered: {plant.h2oInterval}</p>
+                                <button onClick={this.editPlant}>Edit</button> <button>Delete</button>
                             </div>
                         </div>
                     ))}

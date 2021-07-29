@@ -25,6 +25,9 @@ function App() {
     window.localStorage.removeItem('token')
     window.location.href = '/login'
   };
+  const signUp = () => {
+    window.location.href = '/signUp'
+  }
 
   return (
     <Router>
@@ -36,6 +39,7 @@ function App() {
             <Link className='links' to='/'>HOME</Link>
             <Link className='links' to='/login'>LogIn</Link>
             <Link className='links' to='/logout' onClick={logout}>Logout</Link>
+            <Link className='links' to='/signUp' onClick={signUp}>Sign Up</Link>
 
             {localStorage.getItem('token') ?
               <Link className='links' to='/plantList'>View Plants</Link> : <div></div>}

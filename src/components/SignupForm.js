@@ -1,6 +1,7 @@
 import React from 'react'
 import {axiosWithAuth} from '../axiosWithAuth';
 import styled from 'styled-components';
+import axios from 'axios';
 
 class SignupForm extends React.Component {
 
@@ -28,7 +29,7 @@ class SignupForm extends React.Component {
       .then(res => {
         console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
-        this.props.history.push("/protected");
+        this.props.history.push("/addPlant");
       })
       .catch(err => {
         console.log(err);
