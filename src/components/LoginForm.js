@@ -82,16 +82,14 @@ class LoginForm extends React.Component {
 export default LoginForm
 
 const Image = styled.img`
+box-sizing: border-box;
 border: 1px solid black;
 margin: 3% ;
-height: 60vh;
+border-radius: 30%;
+max-height: 100%;
 @media (max-width: 768px){
-  display:flex;
-	flex-direction: row;
-	justify-content: space-around;
-	/* align-items: center; */
-	flex-flow: wrap;
-	background-color: antiquewhite;
+  max-width: 100%;
+  border-radius: 50%;
 }
 `;
 

@@ -1,11 +1,12 @@
 # WATER MY PLANTS
+![image](https://images.unsplash.com/photo-1524492449090-a4e289316d9c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000)
 - [WATER MY PLANTS](#water-my-plants)
   - [About](#about)
   - [Language](#language)
   - [Contributors](#contributors)
   - [Fast Instructions fro running this project](#fast-instructions-fro-running-this-project)
-  - [More indepth approach](#more-indepth-approach)
-- [Available Scripts](#available-scripts)
+- [More indepth approach](#more-indepth-approach)
+  - [Available Scripts](#available-scripts)
     - [`npm start`](#npm-start)
     - [`npm test`](#npm-test)
     - [`npm run build`](#npm-run-build)
@@ -18,7 +19,7 @@
     - [Deployment](#deployment)
     - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
 
-![image](https://images.unsplash.com/photo-1524492449090-a4e289316d9c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000)
+
 ## About
 Love plants but hate the pesky watering schedule? Our app helps you remember how much to water and when to get it right. 
 
@@ -39,8 +40,8 @@ We love JavaScript and React makes it easy.
   - find all necesssary imports at the top of each file. 
   - Above all Have Fun!
 
-## More indepth approach
-# Available Scripts
+# More indepth approach
+## Available Scripts 
 
 In the project directory, you can run:
 

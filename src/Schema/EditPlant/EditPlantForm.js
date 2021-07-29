@@ -85,6 +85,9 @@ export default function EditPlantForm(props) {
                     <div>{errors.h2oInterval}</div>
                     <div>{errors.image}</div>
                 </div>
+                <div>
+                <Image src="https://images.unsplash.com/photo-1498569026542-39c64353e401?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fG1pc3NpbmclMjBwbGFudCUyMHNwb3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+            </div>
 
 
             </form>
@@ -108,3 +111,15 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
   }`;
+
+const Image = styled.img`
+box-sizing: border-box;
+border: 1px solid black;
+margin: 3% ;
+border-radius: 30%;
+max-height: 100%;
+@media (max-width: 768px){
+  max-width: 100%;
+  border-radius: 50%;
+}
+`;
