@@ -95,11 +95,16 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 1%;
   @media (max-width: 768px) {
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
   }
 
+}
+.links{
+  margin: 0.5%;
 }
 a{
 text-decoration: none;
