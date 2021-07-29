@@ -1,5 +1,4 @@
 import React from 'react'
-import {axiosWithAuth} from '../axiosWithAuth';
 import styled from 'styled-components';
 import axios from 'axios';
 

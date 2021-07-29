@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth'
 import styled from 'styled-components'
-
+import { useHistory } from 'react-router';
 export default function PlantList() {
     const [plants, setPlants] = useState([]);
-
+    const history = useHistory()
 
     useEffect(() => {
         axiosWithAuth().get('/api/plants')
@@ -28,13 +28,13 @@ export default function PlantList() {
         axiosWithAuth()
           .delete(`/api/plants/${plant.plantID}`)
           .then((res) => {
-            console.log(res);
+            // console.log(res);
             deletePlant(plant.plantID);
             axiosWithAuth().get('/api/plants')
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setPlants(res.data);
-                console.log('plants: ', plants);
+                // console.log('plants: ', plants);
             })
             .catch(err => {
                 console.log(err)
@@ -43,6 +43,16 @@ export default function PlantList() {
           .catch((err) => console.log(err));
       };  
 
+      const editPlant = (plant) => {
+        axiosWithAuth()
+        .delete(`/api/plants/${plant.plantID}`)
+        .then((res) => {
+          // console.log(res);
+          deletePlant(plant.plantID);
+          history.push('/addPlant')
+        })
+        .catch((err) => console.log(err));
+      }
 
     return (
         <Plantlist>
@@ -53,7 +63,7 @@ export default function PlantList() {
                             <h2>{plant.nickname}</h2>
                             <p>Amount of Water Needed: {plant.h2oAmount}</p>
                             <p>How often I need watered: {plant.h2oInterval}</p>
-                            <button >Edit</button> <button onClick={() => deleteItem(plant)}>Delete</button>
+                            <button onClick={() => editPlant(plant)} >Edit</button> <button onClick={() => deleteItem(plant)}>Delete</button>
                         </div>
                     </div>
                 ))}

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
-import axios from "axios";
 import schema from "../formSchema";
 import EditPlantForm from "./EditPlantForm";
 import styled from 'styled-components';
 
 const initialFormValues = {
     nickname: "",
-    species: "",
-    h2oInterval: "",
-    image: "",
+    h2oInterval: 0,
+    h2oAmount: "",
 };
 
 const initialFormErrors = {
@@ -23,54 +21,11 @@ const plantList = [];
 const initialDisabled = true;
 
 export default function EditPlant() {
+    /*eslint-disable-next-line */
     const [plants, setPlants] = useState(plantList);
     const [formValues, setFormValues] = useState(initialFormValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
-
-    // const plantSubmitted = (newplant) => {
-    //     return setPlants(formValues)
-    // }
-
-    //   AXIOS PLACE HOLDERS ====================
-    //     .get("https://reqres.in/api/orders")
-    //     .then((res) => {
-    //       setPizzas(res.data.data);
-    //       console.log(`HERE IS setPizzas`, setPizzas);
-    //     })
-    //     .catch((err) => {
-    //       debugger;
-    //       console.log(err);
-    //     });
-    // };
-
-    const postNewPlant = (newPlant) => {
-        axios
-            .post("???????", newPlant)
-            .then((res) => {
-                setPlants([...plants, res.data]);
-                setFormValues(initialFormValues);
-                console.log(`HERE is postNewPlant`, postNewPlant);
-            })
-            .catch((err) => {
-                debugger;
-                console.log(err);
-            })
-    };
-
-    const putNewPlant = (editPlant) => {
-        axios
-            .put("???????", editPlant)
-            .then((res) => {
-                setPlants([...plants, res.data]);
-                setFormValues(initialFormValues);
-                console.log(`HERE is putNewPlant`, putNewPlant);
-            })
-            .catch((err) => {
-                debugger;
-                console.log(err);
-            })
-    };
 
     //VALIDATIONS =======================
     const validate = (name, value) => {
@@ -108,22 +63,21 @@ export default function EditPlant() {
 
     //SUBMIT HANDLER
     const formSubmit = () => {
+        /*eslint-disable-next-line */
         const newPlant = {
             nickname: formValues.nickname.trim(),
-            species: formValues.species.trim(),
-            h2oInterval: formValues.h2oInterval.trim(),
-            image: formValues.image.trim()
+            h2oInterval: formValues.h2oInterval,
+            h2oAmount: formValues.h2oAmount.trim()
         }
+        /*eslint-disable-next-line */
         const editPlant = {
             nickname: formValues.nickname.trim(),
-            species: formValues.species.trim(),
-            h2oInterval: formValues.h2oInterval.trim(),
-            image: formValues.image.trim(),
+            h2oInterval: formValues.h2oInterval,
+            h2oAmount: formValues.h2oAmount.trim(),
         }
 
 
-        postNewPlant(newPlant);
-        putNewPlant(editPlant);
+        // putNewPlant(editPlant);
     }
 
 
@@ -136,6 +90,7 @@ export default function EditPlant() {
                     submit={formSubmit}
                     disabled={disabled}
                     errors={formErrors}
+                    setValues={setFormValues}
                 />
             </div>
 

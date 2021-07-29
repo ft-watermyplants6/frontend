@@ -56,8 +56,7 @@ function App() {
             {localStorage.getItem('token') ?
               <Link className='links' to='/addPlant' id="add-plant">Add a Plant</Link> : <div></div>}
 
-            {localStorage.getItem('token') ?
-              <Link className='links' to='/editPlant' id="edit-plant">Edit a Plant</Link> : <div></div>}
+            
 
           </nav>
           <Switch>

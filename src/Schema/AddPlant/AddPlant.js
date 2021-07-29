@@ -27,22 +27,6 @@ export default function AddPlant() {
     const [formValues, setFormValues] = useState(initialFormValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
-
-    // const plantSubmitted = (newplant) => {
-    //     return setPlants(formValues)
-    // }
-
-    //   axiosWithAuth()
-    //     .get("https://reqres.in/api/orders")
-    //     .then((res) => {
-    //       setPizzas(res.data.data);
-    //       console.log(`HERE IS setPizzas`, setPizzas);
-    //     })
-    //     .catch((err) => {
-    //       debugger;
-    //       console.log(err);
-    //     });
-    // };
     
     const postNewPlant = (newPlant) => {
         console.log('newPlant:', newPlant)
@@ -58,21 +42,7 @@ export default function AddPlant() {
                 console.log(err);
             })
     };
-    /*eslint-disable-next-line */
-    const putNewPlant = (editPlant) => {
-        axiosWithAuth()
-            .put("/api/plants", editPlant)
-            .then((res) => {
-                setPlants([...plants, res.data]);
-                setFormValues(initialFormValues);
-                console.log(`HERE is putNewPlant`, putNewPlant);
-            })
-            .catch((err) => {
-                debugger;
-                console.log(err);
-            })
-    };
-
+   
     //VALIDATIONS =======================
     const validate = (name, value) => {
         yup
@@ -123,7 +93,6 @@ export default function AddPlant() {
 
         
         postNewPlant(newPlant);
-        // putNewPlant(editPlant);
     }
 
 
