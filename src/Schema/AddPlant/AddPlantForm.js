@@ -107,7 +107,7 @@ export default function AddPlantForm(props) {
 const Image = styled.img`
   border: 1px solid black;
   margin: 3%;
-  height: 60vh;
+  /* height: 60vh; */
 `;
 
 const Container = styled.div`

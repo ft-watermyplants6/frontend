@@ -84,14 +84,15 @@ export default LoginForm
 const Image = styled.img`
 border: 1px solid black;
 margin: 3% ;
-height: 60vh;
+/* height: 60vh; */
 @media (max-width: 768px){
   display:flex;
 	flex-direction: row;
 	justify-content: space-around;
-	/* align-items: center; */
 	flex-flow: wrap;
 	background-color: antiquewhite;
+  max-width: 100%;
+  border-radius: 50%;
 }
 `;
 
