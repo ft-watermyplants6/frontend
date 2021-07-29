@@ -1,6 +1,7 @@
 import React from 'react'
 import {axiosWithAuth} from '../axiosWithAuth';
 import styled from 'styled-components';
+import axios from 'axios';
 
 
 class SignupForm extends React.Component {
@@ -23,9 +24,9 @@ class SignupForm extends React.Component {
     });
   };
 
-  login = e => {
+  signUp = e => {
     e.preventDefault();
-    axiosWithAuth().post('/api/auth/register', this.state.credentials)
+    axios.post('https://wmp-api.herokuapp.com/api/auth/register', this.state.credentials)
       .then(res => {
         console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
@@ -40,7 +41,7 @@ class SignupForm extends React.Component {
     return (
       <Container>
       <div>
-        <form onSubmit={this.login}>
+        <form onSubmit={this.signUp}>
           <label>Username:
             <input
               type='text'
