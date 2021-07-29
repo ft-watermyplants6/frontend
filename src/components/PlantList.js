@@ -5,6 +5,7 @@ import styled from 'styled-components'
 export default function PlantList() {
     const [plants, setPlants] = useState([]);
 
+
     useEffect(() => {
         axiosWithAuth().get('/api/plants')
             .then(res => {
@@ -16,6 +17,7 @@ export default function PlantList() {
                 console.log(err)
             })
     }, []);
+
 
     const deletePlant = (id) => {
         setPlants(plants.filter((plant) => plant.id !== id));
@@ -40,6 +42,7 @@ export default function PlantList() {
           })
           .catch((err) => console.log(err));
       };  
+
 
     return (
         <Plantlist>

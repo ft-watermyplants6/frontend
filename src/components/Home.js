@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import nothing from "../assets/watering-can.jpg"
+
 export default function Home() {
     return (
         <Container>
