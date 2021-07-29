@@ -6,7 +6,7 @@ import PlantList from './components/PlantList';
 import Home from './components/Home';
 import "../src/"
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link, Switch, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import AddSuccess from './Schema/AddPlant/AddSuccess'
 import EditPlantSuccess from './Schema/EditPlant/EditPlantSuccess';
 import SignupForm from './components/SignupForm';
