@@ -60,7 +60,9 @@ blockquote, q {
     justify-content: space-around;
     align-items: center;
     flex-flow: wrap;
-    background-color: rgb(7, 83, 60);
+    /* background-color: rgb(7, 83, 60); */
+     height: 60vh;
+     /* max-height: 100%; */
   }
 
   @media (max-width: 768px){
