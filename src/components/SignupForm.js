@@ -2,6 +2,7 @@ import React from 'react'
 import {axiosWithAuth} from '../axiosWithAuth';
 import styled from 'styled-components';
 
+
 class SignupForm extends React.Component {
 
 
@@ -68,7 +69,7 @@ class SignupForm extends React.Component {
               placeholder='Choose a new password'
             />
           </label>
-          <button onSubmit={this.login}>Sign Up</button>
+          <button>Sign Up</button>
           <h3>Sign Up and Come on in!</h3>
           <p>We'll help remembering to water your plants easy!</p>
           <div>
