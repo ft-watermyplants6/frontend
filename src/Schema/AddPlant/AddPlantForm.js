@@ -104,11 +104,6 @@ export default function AddPlantForm(props) {
     );
 }
 
-const Image = styled.img`
-  border: 1px solid black;
-  margin: 3%;
-  /* height: 60vh; */
-`;
 
 const Container = styled.div`
   form {
@@ -123,4 +118,17 @@ const Container = styled.div`
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    
   }`;
+  const Image = styled.img`
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin: 3% ;
+  border-radius: 30%;
+  max-height: 100%;
+  @media (max-width: 768px){
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  `;
+  

@@ -78,13 +78,14 @@ class SignupForm extends React.Component {
           <button>Sign Up</button>
           <h3>Sign Up and Come on in!</h3>
           <p>We'll help remembering to water your plants easy!</p>
-          <div>
+
+        </form>
+        <div className='images'>
                         <Image
                             src="https://images.unsplash.com/photo-1577968897411-6973c2e2452a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGhvdXNlJTIwcGxhbnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                             alt="plant"
                         />
                     </div>
-        </form>
       </div>
       </Container>
 
