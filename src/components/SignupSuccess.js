@@ -10,3 +10,4 @@ export default function SignUpSuccess() {
         </section>
     )
 }
+//this is nothing
