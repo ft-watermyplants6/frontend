@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
       .then(res => {
         console.log('res: ', res)
         localStorage.setItem('token', res.data.token);
-        this.props.history.push("/addPlant");
+        this.props.history.push("/SignupSuccess");
       })
       .catch(err => {
         console.log(err);
@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
               placeholder='Choose a new password'
             />
           </label>
-          <button>Sign Up</button>
+          <button onSubmit={this.login}>Sign Up</button>
           <h3>Sign Up and Come on in!</h3>
           <p>We'll help remembering to water your plants easy!</p>
           <div>
